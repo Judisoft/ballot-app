@@ -58,6 +58,7 @@ const BallotCard = ({ members, selectedGroup }) => {
             group: group,
             hasBalloted: true,
             rank: rank,
+            memberEmail: authUser.email,
           },
           {
             headers: {

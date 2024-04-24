@@ -5,13 +5,13 @@ const BallotCards = ({ members, selectedGroup }) => {
   return (
     <div>
       <div className="py-2 px-4 mx-auto max-w-screen-sm text-center lg:py-2 z-10 relative">
-        <h1 className="mb-4 pt-8 text-xl tracking-tight leading-none text-gray-500 md:text-2xl lg:text-2xl dark:text-white">
+        <h1 className="mb-4 pt-8 text-xl tracking-tight leading-none font-bold text-gray-700 md:text-2xl lg:text-2xl dark:text-white">
           {selectedGroup}
         </h1>
         <h1 className="mb-4 text-2xl font-bold tracking-tight leading-none text-gray-900 md:text-2xl lg:text-2xl dark:text-white">
           {members.length > 1 ? members.length + " members" : ""}
         </h1>
-        {members.length > 1 && (
+        {members.length > 1 ? (
           <div>
             <small className="text-red-700 font-bold">
               Note: You can only choose once
@@ -24,6 +24,8 @@ const BallotCards = ({ members, selectedGroup }) => {
               ))}
             </div>
           </div>
+        ) : (
+          <div className="text-gray-500">No member added</div>
         )}
       </div>
     </div>

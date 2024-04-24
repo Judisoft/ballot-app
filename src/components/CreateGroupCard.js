@@ -1,5 +1,4 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState, useRef } from "react";
 import NotifySuccess from "../utils/notifications/NotifySuccess";
 import NotifyError from "../utils/notifications/NotifyError";
 import axios from "axios";
@@ -8,14 +7,14 @@ import getCookie from "../utils/getCookie";
 const CreateGroupCard = () => {
   const [groupName, setGroupName] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [userName, setUserName] = useState("");
-  const [userTelephone, setUserTelephone] = useState("");
+  const [userEmail, setUserEmail] = useState("");
+  const groupNameRef = useRef("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const data = {
       title: groupName,
-      admin: JSON.parse(getCookie("authUser")).name,
+      admin: JSON.parse(getCookie("authUser")).email,
       token: getCookie("token"),
     };
     try {
@@ -32,6 +31,7 @@ const CreateGroupCard = () => {
       console.log(res);
       NotifySuccess(`${res.data.message}`);
       setIsSubmitted(true);
+      groupNameRef.current = groupName;
     } catch (error) {
       NotifyError(`${error.response.data.message}`);
     }
@@ -40,9 +40,8 @@ const CreateGroupCard = () => {
   const handleAddMemberSubmit = (e) => {
     e.preventDefault();
     const userInfo = {
-      name: userName,
-      telephone: userTelephone,
-      group: groupName,
+      email: userEmail,
+      group: groupNameRef.current,
     };
     const addMemberToGroup = async () => {
       try {
@@ -58,8 +57,7 @@ const CreateGroupCard = () => {
         );
         NotifySuccess(`${res.data.message}`);
         //After adding a member, clear the form and add other members
-        setUserName("");
-        setUserTelephone("");
+        setUserEmail("");
       } catch (error) {
         NotifyError(error.response.data.message);
       }
@@ -84,24 +82,12 @@ const CreateGroupCard = () => {
                   onSubmit={handleAddMemberSubmit}>
                   <div>
                     <input
-                      type="text"
-                      name="userName"
-                      value={userName}
-                      onChange={(e) => setUserName(e.target.value)}
+                      type="email"
+                      name="email"
+                      value={userEmail}
+                      onChange={(e) => setUserEmail(e.target.value)}
                       className="bg-gray-50 border h-12 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                      placeholder="Member's Name"
-                      required="required"
-                      autoFocus
-                    />
-                  </div>
-                  <div>
-                    <input
-                      type="tel"
-                      name="telephone"
-                      value={userTelephone}
-                      onChange={(e) => setUserTelephone(e.target.value)}
-                      className="bg-gray-50 border h-12 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                      placeholder="Telephone"
+                      placeholder="Enter email of member to add"
                       required="required"
                     />
                   </div>
@@ -115,7 +101,7 @@ const CreateGroupCard = () => {
             ) : (
               <form className="space-y-6" method="POST" onSubmit={handleSubmit}>
                 <h5 className="text-xl font-medium text-gray-900 dark:text-white">
-                  Name your Group
+                  Give a name to your Group
                 </h5>
                 <div>
                   <input

@@ -37,6 +37,7 @@ const LoginCard = () => {
         JSON.stringify({
           name: res.data.User.name,
           telephone: res.data.User.telephone,
+          email: res.data.User.email,
         }),
         60
       );
@@ -45,6 +46,7 @@ const LoginCard = () => {
         getAuthUserInfo({
           name: res.data.User.name,
           telephone: res.data.User.telephone,
+          email: res.data.User.eamil,
         })
       );
       NotifySuccess(`${res.data.message}`);

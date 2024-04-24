@@ -6,8 +6,7 @@ import getCookie from "../utils/getCookie";
 
 const AddMemberCard = () => {
   const [groupName, setGroupName] = useState("");
-  const [userName, setUserName] = useState("");
-  const [userTelephone, setUserTelephone] = useState("");
+  const [userEmail, setUserEmail] = useState("");
   const [groups, setGroups] = useState([]);
 
   useEffect(() => {
@@ -28,8 +27,7 @@ const AddMemberCard = () => {
   ));
 
   const userInfo = {
-    name: userName,
-    telephone: userTelephone,
+    email: userEmail,
     group: groupName,
   };
 
@@ -46,8 +44,7 @@ const AddMemberCard = () => {
         }
       );
       NotifySuccess(`${res.data.message}`);
-      setUserName("");
-      setUserTelephone("");
+      setUserEmail("");
       setGroupName("");
     } catch (error) {
       if (error.response && error.response.status === 409) {
@@ -93,24 +90,12 @@ const AddMemberCard = () => {
                 </div>
                 <div>
                   <input
-                    type="text"
-                    name="userName"
-                    value={userName}
-                    onChange={(e) => setUserName(e.target.value)}
+                    type="email"
+                    name="email"
+                    value={userEmail}
+                    onChange={(e) => setUserEmail(e.target.value)}
                     className="bg-gray-50 border h-12 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                    placeholder="Member's Name"
-                    required="required"
-                    autoFocus
-                  />
-                </div>
-                <div>
-                  <input
-                    type="tel"
-                    name="telephone"
-                    value={userTelephone}
-                    onChange={(e) => setUserTelephone(e.target.value)}
-                    className="bg-gray-50 border h-12 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                    placeholder="Telephone"
+                    placeholder="Email"
                     required="required"
                   />
                 </div>

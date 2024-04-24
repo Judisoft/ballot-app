@@ -46,7 +46,7 @@ const SelectGroup = () => {
   };
 
   const filteredGroups = userGroups.filter(
-    (group) => group.telephone === JSON.parse(getCookie("authUser")).telephone
+    (group) => group.email === JSON.parse(getCookie("authUser")).email
   );
 
   const sortedGroups = Array.from(
