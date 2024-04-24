@@ -7,8 +7,8 @@ const Jumbotron = ({title, desc, readmore}) => {
     const location = useLocation();
   return (
     <div>
-        <section className="bg-white mt-16 bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')] dark:bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg')]">
-            <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 relative">
+        <section className="mt-16 bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')] dark:bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg')]">
+            <div className="py-16 px-4 mx-auto max-w-screen-xl text-center lg:py-16 relative">
                 {
                     (location.pathname === '/')
                     
@@ -33,7 +33,6 @@ const Jumbotron = ({title, desc, readmore}) => {
                     : <></>
                 }
             </div>
-            {/* <div className="bg-gradient-to-b from-blue-200 to-transparent dark:from-blue-900 w-full h-full absolute top-0 left-0 z-0"></div> */}
         </section>
     </div>
   )

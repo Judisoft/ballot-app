@@ -8,7 +8,10 @@ import { useNavigate } from "react-router-dom";
 import ValidateEmail from "../utils/ValidateEmail";
 import setCookie from "./../utils/setCookie";
 import { useDispatch, useSelector } from "react-redux";
-import { checkAuthentication } from "../slices/authenticationSlice";
+import {
+  checkAuthentication,
+  getAuthUserInfo,
+} from "../slices/authenticationSlice";
 
 const LoginCard = () => {
   const [email, setEmail] = useState("");
@@ -20,32 +23,44 @@ const LoginCard = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
+  const loginUser = async (payload) => {
+    try {
+      const res = await axios.post(
+        "http://localhost:5000/api/v1/login",
+        payload
+      );
+      const token = res.data.token;
+
+      setCookie("token", token, 60);
+      setCookie(
+        "authUser",
+        JSON.stringify({
+          name: res.data.User.name,
+          telephone: res.data.User.telephone,
+        }),
+        60
+      );
+      dispatch(checkAuthentication());
+      dispatch(
+        getAuthUserInfo({
+          name: res.data.User.name,
+          telephone: res.data.User.telephone,
+        })
+      );
+      NotifySuccess(`${res.data.message}`);
+      navigate("/ballot");
+    } catch (error) {
+      console.log(error);
+      NotifyError(`${error.response.data.message}`);
+    }
+  };
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!ValidateEmail(email)) {
       NotifyWarning("Email not valid");
     } else {
-      const data = { email, password };
-
-      const loginUser = async () => {
-        try {
-          const res = await axios.post(
-            "http://localhost:5000/api/v1/login",
-            data
-          );
-          const token = res.data.token;
-          // onLogin();
-          setCookie("token", token, 60);
-          setCookie("authUsername", res.data.User.name, 60);
-          setCookie("authUserTelephone", res.data.User.telephone, 60);
-          dispatch(checkAuthentication());
-          NotifySuccess(`${res.data.message}`);
-          navigate("/ballot");
-        } catch (error) {
-          NotifyError(`${error.response.data.message}`);
-        }
-      };
-      loginUser();
+      const payload = { email, password };
+      loginUser(payload);
     }
   };
 
@@ -62,7 +77,7 @@ const LoginCard = () => {
           <div className="w-full max-w-sm mb-16 p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
             <form className="space-y-6" onSubmit={handleSubmit}>
               <h5 className="text-xl font-medium text-gray-900 dark:text-white">
-                Provide credentials to log in
+                Provide your credentials to log in
               </h5>
               <div>
                 <label
@@ -115,15 +130,15 @@ const LoginCard = () => {
                   </label>
                 </div>
                 <a
-                  href="#Link"
+                  href="/reset-password"
                   className="ms-auto text-sm text-blue-700 hover:underline dark:text-blue-500">
-                  Lost Password?
+                  Forgot Password?
                 </a>
               </div>
               <button
                 type="submit"
                 className="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                Login to your account
+                Grant me Access
               </button>
               <div className="text-sm font-medium text-gray-500 dark:text-gray-300">
                 Not registered?{" "}

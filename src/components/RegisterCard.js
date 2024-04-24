@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import NotifySuccess from './../utils/notifications/NotifySuccess';
 import NotifyWarning from './../utils/notifications/NotifyWarning';
 import NotifyError from './../utils/notifications/NotifyError';
@@ -14,21 +14,9 @@ const RegisterCard = () => {
     const [email, setEmail] = useState('');
     const [telephone, setTelephone] = useState('');
     const [password, setPassword] = useState('');
-    const [otp, setOtp] = useState({
-            otp1: '',
-            otp2: '',
-            otp3: '',
-            otp4: '',
-            otp5: '',
-            otp6: ''
-        });
-    const handleOtpInputChange = (e) => {
-        const {name, value} = e.target;
-        setOtp(prevValues => ({
-            ...prevValues,
-            [name]: value
-        }));
-    }
+    const [otpValues, setOtpValues] = useState(['', '', '', '', '', '']);
+    const inputRefs = useRef([]);
+
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [data, setData] = useState({
         name: '',
@@ -36,6 +24,20 @@ const RegisterCard = () => {
         telephone:'',
         password: ''
     });
+
+    const handleInputChange = (e, index) => {
+        const value = e.target.value;
+        setOtpValues((prevValues) => {
+          const updatedValues = [...prevValues];
+          updatedValues[index] = value;
+          return updatedValues;
+        });
+    
+        // Move focus to the next input field if there is a value
+        if (value && index < inputRefs.current.length - 1) {
+          inputRefs.current[index + 1].focus();
+        }
+    };
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -69,10 +71,7 @@ const RegisterCard = () => {
 
     const handleRegistrationSubmit = (e) => {
         e.preventDefault();
-        let otpString = "";
-        for(const value of Object.values(otp)) {
-            otpString += value;
-        }
+        const otpString = otpValues.join('');
         data.otp = otpString;
         // POST request to create user
         const createUser = async () => {
@@ -110,79 +109,20 @@ const RegisterCard = () => {
                                 </label>
                             </div>
                             <div className="flex flex-row">
-                                <div className="px-2">
-                                    <input
-                                        type="text"
-                                        name="otp1"
-                                        value={otp.otp1}
-                                        onChange={handleOtpInputChange}
-                                        className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                                        required="required"
-                                        pattern="[0-9]"
-                                        maxLength="1"
-                                        autoFocus
-                                    />
-                                </div>
-                                <div className="px-2">
-                                    <input
-                                        type="text"
-                                        name="otp2"
-                                        value={otp.otp2}
-                                        onChange={handleOtpInputChange}
-                                        className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                                        required="required"
-                                        pattern="[0-9]"
-                                        maxLength="1"
-                                    />
-                                </div>
-                                <div className="px-2">
-                                    <input
-                                        type="text"
-                                        name="otp3"
-                                        value={otp.otp3}
-                                        onChange={handleOtpInputChange}
-                                        className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                                        required="required"
-                                        pattern="[0-9]"
-                                        maxLength="1"
-                                    />
-                                </div>
-                                <div className="px-2">
-                                    <input
-                                        type="text"
-                                        name="otp4"
-                                        value={otp.otp4}
-                                        onChange={handleOtpInputChange}
-                                        className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                                        required="required"
-                                        pattern="[0-9]"
-                                        maxLength="1"
-                                    />
-                                </div>
-                                <div className="px-2">
-                                    <input
-                                        type="text"
-                                        name="otp5"
-                                        value={otp.otp5}
-                                        onChange={handleOtpInputChange}
-                                        className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                                        required="required"
-                                        pattern="[0-9]"
-                                        maxLength="1"
-                                    />
-                                </div>
-                                <div className="px-2">
-                                    <input
-                                        type="text"
-                                        name="otp6"
-                                        value={otp.otp6}
-                                        onChange={handleOtpInputChange}
-                                        className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                                        required="required"
-                                        pattern="[0-9]"
-                                        maxLength="1"
-                                    />
-                                </div>
+                                {otpValues.map((value, index) => (
+                        <div className="px-2">
+                        <input
+                            key={index}
+                            type="text"
+                            maxLength={1}
+                            value={value}
+                            pattern="[0-9]"
+                            onChange={(e) => handleInputChange(e, index)}
+                            ref={(el) => (inputRefs.current[index] = el)}
+                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                        />
+                        </div>
+                    ))}
                             </div>
                             <button
                                 type="submit"

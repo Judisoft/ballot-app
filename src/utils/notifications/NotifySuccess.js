@@ -4,7 +4,7 @@ const NotifySuccess = (message) => {
     return (
         toast.success(
             `${message}`, {
-                position: "top-right",
+                position: "top-center",
                 autoClose: 5000,
                 hideProgressBar: true,
                 closeOnClick: true,
