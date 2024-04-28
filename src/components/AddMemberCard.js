@@ -3,11 +3,13 @@ import NotifySuccess from "../utils/notifications/NotifySuccess";
 import NotifyError from "../utils/notifications/NotifyError";
 import axios from "axios";
 import getCookie from "../utils/getCookie";
+import ActionLoader from "./ActionLoader";
 
 const AddMemberCard = () => {
   const [groupName, setGroupName] = useState("");
   const [userEmail, setUserEmail] = useState("");
   const [groups, setGroups] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -33,6 +35,7 @@ const AddMemberCard = () => {
 
   const addMemberToGroup = async () => {
     try {
+      setLoading(true);
       const token = getCookie("token");
       const res = await axios.post(
         "http://localhost:5000/api/v1/members",
@@ -56,6 +59,8 @@ const AddMemberCard = () => {
       } else {
         NotifyError(error.response.data.message);
       }
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -102,7 +107,11 @@ const AddMemberCard = () => {
                 <button
                   type="submit"
                   className="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                  Add Member
+                  {loading ? (
+                    <ActionLoader title={"Adding member..."} />
+                  ) : (
+                    "Add Member"
+                  )}
                 </button>
               </form>
             </div>

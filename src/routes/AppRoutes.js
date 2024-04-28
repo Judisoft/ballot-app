@@ -14,6 +14,7 @@ import Contact from "../pages/Contact";
 import About from "../pages/About";
 import ResetPassword from "../pages/auth/ResetPassword";
 import ChangePassword from "../pages/auth/ChangePassword";
+import AdminDashboard from "../pages/admin/AdminDashboard";
 
 const AppRoutes = () => {
   return (
@@ -29,6 +30,14 @@ const AppRoutes = () => {
               <AuthRouteGuard redirectTo="/ballot">
                 <Login />
               </AuthRouteGuard>
+            }
+          />
+          <Route
+            path="/admin/dashboard"
+            element={
+              <ProtectedRoute redirectTo="/login">
+                <AdminDashboard />
+              </ProtectedRoute>
             }
           />
           <Route

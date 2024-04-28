@@ -25,7 +25,12 @@ const BallotCards = ({ members, selectedGroup }) => {
             </div>
           </div>
         ) : (
-          <div className="text-gray-500">No member added</div>
+          <>
+            <div className="text-gray-500">No member added</div>
+            <a href="/groups/add-member" className="text-blue-500 underline">
+              Add member
+            </a>
+          </>
         )}
       </div>
     </div>

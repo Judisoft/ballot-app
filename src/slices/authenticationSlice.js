@@ -9,7 +9,7 @@ const loadAuthenticationState = () => {
 const getAuthUserInfoFromCookieStorage = () => {
   const authUser = getCookie("authUser");
   return authUser ? JSON.parse(authUser) : null;
-}
+};
 
 const authenticationSlice = createSlice({
   name: "authentication",
@@ -27,5 +27,6 @@ const authenticationSlice = createSlice({
   },
 });
 
-export const { checkAuthentication, getAuthUserInfo } = authenticationSlice.actions;
+export const { checkAuthentication, getAuthUserInfo } =
+  authenticationSlice.actions;
 export default authenticationSlice.reducer;

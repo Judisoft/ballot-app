@@ -4,27 +4,34 @@ import { useNavigate } from "react-router-dom";
 import NotifySuccess from "./../utils/notifications/NotifySuccess";
 import NotifyError from "./../utils/notifications/NotifyError";
 import axios from "axios";
+import ActionLoader from "./ActionLoader";
 
 const ChangePasswordCard = () => {
   const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-      const data = { password };
+    const data = { password };
 
-      const changeUserPassword = async () => {
-        try {
-            const token = localStorage.getItem("token");
-            const res = await axios.post(
-            `http://localhost:5000/api/v1/reset-password/${token}`, data);
-          NotifySuccess(`${res.data.message}`);
-          navigate('/login');
-        } catch (error) {
-          NotifyError(`${error.response.data.message}`);
-        }
-      };
-      changeUserPassword();
+    const changeUserPassword = async () => {
+      try {
+        setLoading(true);
+        const token = localStorage.getItem("token");
+        const res = await axios.post(
+          `http://localhost:5000/api/v1/reset-password/${token}`,
+          data
+        );
+        NotifySuccess(`${res.data.message}`);
+        navigate("/login");
+      } catch (error) {
+        NotifyError(`${error.response.data.message}`);
+      } finally {
+        setLoading(false);
+      }
+    };
+    changeUserPassword();
   };
 
   return (
@@ -55,7 +62,11 @@ const ChangePasswordCard = () => {
               <button
                 type="submit"
                 className="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                    Set new Password
+                {loading ? (
+                  <ActionLoader title="Resetting password..." />
+                ) : (
+                  "Set new password"
+                )}
               </button>
             </form>
           </div>

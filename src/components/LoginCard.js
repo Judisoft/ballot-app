@@ -12,10 +12,13 @@ import {
   checkAuthentication,
   getAuthUserInfo,
 } from "../slices/authenticationSlice";
+import Loader from "./Loader";
+import ActionLoader from "./ActionLoader";
 
 const LoginCard = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
   const userIsAuthenticated = useSelector(
     (state) => state.authentication.isAuthenticated
   );
@@ -25,6 +28,7 @@ const LoginCard = () => {
 
   const loginUser = async (payload) => {
     try {
+      setLoading(true);
       const res = await axios.post(
         "http://localhost:5000/api/v1/login",
         payload
@@ -38,8 +42,9 @@ const LoginCard = () => {
           name: res.data.User.name,
           telephone: res.data.User.telephone,
           email: res.data.User.email,
+          role: res.data.User.role,
         }),
-        60
+        120
       );
       dispatch(checkAuthentication());
       dispatch(
@@ -47,6 +52,7 @@ const LoginCard = () => {
           name: res.data.User.name,
           telephone: res.data.User.telephone,
           email: res.data.User.eamil,
+          role: res.data.User.role,
         })
       );
       NotifySuccess(`${res.data.message}`);
@@ -54,6 +60,8 @@ const LoginCard = () => {
     } catch (error) {
       console.log(error);
       NotifyError(`${error.response.data.message}`);
+    } finally {
+      setLoading(false);
     }
   };
   const handleSubmit = (e) => {
@@ -139,8 +147,12 @@ const LoginCard = () => {
               </div>
               <button
                 type="submit"
-                className="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                Grant me Access
+                className="w-full text-white bg-blue-700 hover:bg-blue-800  focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 ">
+                {loading ? (
+                  <ActionLoader title="Logging in..." />
+                ) : (
+                  "Grant me access"
+                )}
               </button>
               <div className="text-sm font-medium text-gray-500 dark:text-gray-300">
                 Not registered?{" "}

@@ -4,8 +4,10 @@ import generateRank from "./../utils/generateRank";
 import getCookie from "./../utils/getCookie";
 import NotifySuccess from "./../utils/notifications/NotifySuccess";
 import NotifyError from "./../utils/notifications/NotifyError";
+import BallotLoader from "./BallotLoader";
 
 const BallotCard = ({ members, selectedGroup }) => {
+  const [loading, setLoading] = useState(false);
   const [unavailableRanks, setUnavailableRanks] = useState([]);
   const [message, setMessage] = useState("");
 
@@ -34,7 +36,7 @@ const BallotCard = ({ members, selectedGroup }) => {
   }, [selectedGroup]);
 
   const handleMouseOver = (e) => {
-    setMessage(selectedGroup);
+    setMessage("Click to ballot");
   };
 
   const handleMouseOut = (e) => {
@@ -50,6 +52,7 @@ const BallotCard = ({ members, selectedGroup }) => {
 
     const saveBallotResult = async () => {
       try {
+        setLoading(true);
         const token = getCookie("token");
         const res = await axios.post(
           "http://localhost:5000/api/v1/ballots",
@@ -70,6 +73,8 @@ const BallotCard = ({ members, selectedGroup }) => {
       } catch (error) {
         console.log(error);
         NotifyError(error.response.data.message);
+      } finally {
+        setLoading(false);
       }
     };
     saveBallotResult();
@@ -79,13 +84,15 @@ const BallotCard = ({ members, selectedGroup }) => {
     <div>
       <div className="p-4">
         <button
-          className="flex p-8 bg-gray-900 border border-gray-200 text-md text-center items-center justify-center font-bold h-32 w-32 rounded-lg shadow-md hover:bg-gray-300 hover:border-gray-900 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
+          className="flex p-8 bg-blue-600 hover:bg-blue-700  text- text-center items-center justify-center h-24 w-24 rounded-lg custom-shadow  hover:border-blue-700 dark:bg-blue-600 dark:border-blue-600 dark:hover:bg-blue-700"
           onClick={handleClick}
           onMouseOver={handleMouseOver}
           onMouseOut={handleMouseOut}>
           {message}
         </button>
+        <BallotLoader />
       </div>
+      {loading ? <BallotLoader /> : null}
     </div>
   );
 };

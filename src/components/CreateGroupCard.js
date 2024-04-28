@@ -3,11 +3,14 @@ import NotifySuccess from "../utils/notifications/NotifySuccess";
 import NotifyError from "../utils/notifications/NotifyError";
 import axios from "axios";
 import getCookie from "../utils/getCookie";
+import ActionLoader from "./ActionLoader";
 
 const CreateGroupCard = () => {
   const [groupName, setGroupName] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [userEmail, setUserEmail] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [addMemberloading, setAddMemberLoading] = useState(false);
   const groupNameRef = useRef("");
 
   const handleSubmit = async (e) => {
@@ -18,6 +21,7 @@ const CreateGroupCard = () => {
       token: getCookie("token"),
     };
     try {
+      setLoading(true);
       const token = getCookie("token");
       const res = await axios.post(
         "http://localhost:5000/api/v1/groups",
@@ -34,6 +38,8 @@ const CreateGroupCard = () => {
       groupNameRef.current = groupName;
     } catch (error) {
       NotifyError(`${error.response.data.message}`);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -45,6 +51,7 @@ const CreateGroupCard = () => {
     };
     const addMemberToGroup = async () => {
       try {
+        setAddMemberLoading(true);
         const token = getCookie("token");
         const res = await axios.post(
           "http://localhost:5000/api/v1/members",
@@ -60,6 +67,8 @@ const CreateGroupCard = () => {
         setUserEmail("");
       } catch (error) {
         NotifyError(error.response.data.message);
+      } finally {
+        setAddMemberLoading(false);
       }
     };
     addMemberToGroup();
@@ -94,7 +103,11 @@ const CreateGroupCard = () => {
                   <button
                     type="submit"
                     className="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                    Add Member
+                    {addMemberloading ? (
+                      <ActionLoader title={`Adding member...`} />
+                    ) : (
+                      "Add Member"
+                    )}
                   </button>
                 </form>
               </div>
@@ -119,7 +132,11 @@ const CreateGroupCard = () => {
                 <button
                   type="submit"
                   className="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                  Create Group
+                  {loading ? (
+                    <ActionLoader title={"Creating group..."} />
+                  ) : (
+                    "Create Group"
+                  )}
                 </button>
               </form>
             )}
