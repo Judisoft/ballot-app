@@ -1,5 +1,4 @@
-import React, { useEffect } from "react";
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
 import NotifySuccess from "./../utils/notifications/NotifySuccess";
 import NotifyError from "./../utils/notifications/NotifyError";
 import NotifyWarning from "./../utils/notifications/NotifyWarning";
@@ -35,7 +34,7 @@ const LoginCard = () => {
       );
       const token = res.data.token;
 
-      setCookie("token", token, 60);
+      setCookie("token", token);
       setCookie(
         "authUser",
         JSON.stringify({
@@ -43,8 +42,7 @@ const LoginCard = () => {
           telephone: res.data.User.telephone,
           email: res.data.User.email,
           role: res.data.User.role,
-        }),
-        120
+        })
       );
       dispatch(checkAuthentication());
       dispatch(

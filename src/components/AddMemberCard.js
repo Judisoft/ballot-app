@@ -14,8 +14,8 @@ const AddMemberCard = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/v1/groups");
-        setGroups(res.data.groups);
+        const res = await axios.get("http://localhost:5000/api/v1/members");
+        setGroups(res.data.members);
       } catch (error) {
         NotifyError(`Error while fetching groups: ${error.message}`);
       }
@@ -23,7 +23,19 @@ const AddMemberCard = () => {
     fetchData();
   }, []);
 
-  const sortedGroups = groups.map((group) => group.title).sort();
+  // const sortedGroups = groups.map((group) => group.title).sort();
+  // const options = sortedGroups.map((group) => (
+  //   <option key={group}>{group}</option>
+  // ));
+
+  const filteredGroups = groups.filter(
+    (group) => group.email === JSON.parse(getCookie("authUser")).email
+  );
+
+  const sortedGroups = Array.from(
+    new Set(filteredGroups.flatMap((group) => group.group))
+  ).sort();
+
   const options = sortedGroups.map((group) => (
     <option key={group}>{group}</option>
   ));
@@ -47,8 +59,6 @@ const AddMemberCard = () => {
         }
       );
       NotifySuccess(`${res.data.message}`);
-      setUserEmail("");
-      setGroupName("");
     } catch (error) {
       if (error.response && error.response.status === 409) {
         NotifyError("Member already exists with this name.");

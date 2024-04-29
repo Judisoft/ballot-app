@@ -9,13 +9,13 @@ const Ballot = () => {
 
   return (
     <div>
-      <Jumbotron 
-        title={"Njangi Groups"} 
-        desc={`(Logged in as: ${user.name})`} 
+      <Jumbotron
+        title={"Njangi Groups"}
+        desc={`(Logged in as: ${user.name})`}
       />
       <SelectForm />
       <div className="mx-auto max-w-screen-sm text-center relative">
-        <Readmore message="View ballot results" link={"/ballots/groups"} />
+        <Readmore message="Go to my groups" link={"/ballots/groups"} />
       </div>
     </div>
   );

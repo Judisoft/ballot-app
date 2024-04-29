@@ -1,15 +1,10 @@
 /**
- * Sets a cookie that expires after expTime minutes
- * @param {String} cookieName 
- * @param {String} cookieValue 
- * @param {Number} expTime 
+ * Sets a cookie that does not expire
+ * @param {String} cookieName
+ * @param {String} cookieValue
  */
-
-const setCookie = (cookieName, cookieValue, expTime) => {
-    const currentDate = new Date();
-    currentDate.setTime(currentDate.getTime() + (expTime*60*1000));
-    let expires = "expires=" + currentDate.toUTCString();
-    document.cookie = `${cookieName} = ${cookieValue}; ${expires}; path=/`;
-}
+const setCookie = (cookieName, cookieValue) => {
+  document.cookie = `${cookieName}=${cookieValue}; path=/`;
+};
 
 export default setCookie;

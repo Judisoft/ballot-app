@@ -90,9 +90,8 @@ const BallotCard = ({ members, selectedGroup }) => {
           onMouseOut={handleMouseOut}>
           {message}
         </button>
-        <BallotLoader />
+        {loading ? <BallotLoader /> : null}
       </div>
-      {loading ? <BallotLoader /> : null}
     </div>
   );
 };

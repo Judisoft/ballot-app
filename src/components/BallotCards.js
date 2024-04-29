@@ -8,14 +8,12 @@ const BallotCards = ({ members, selectedGroup }) => {
         <h1 className="mb-4 pt-8 text-xl tracking-tight leading-none font-bold text-gray-700 md:text-2xl lg:text-2xl dark:text-white">
           {selectedGroup}
         </h1>
-        <h1 className="mb-4 text-2xl font-bold tracking-tight leading-none text-gray-900 md:text-2xl lg:text-2xl dark:text-white">
+        <p className="mb-4 text-md tracking-tight leading-none text-gray-500 md:text-md lg:text-md dark:text-white">
           {members.length > 1 ? members.length + " members" : ""}
-        </h1>
+        </p>
         {members.length > 1 ? (
           <div>
-            <small className="text-red-700 font-bold">
-              Note: You can only choose once
-            </small>
+            <br />
             <div className="flex flex-wrap justify-center mb-4">
               {members.map((member, key) => (
                 <div key={key}>

@@ -3,11 +3,13 @@ import axios from "axios";
 import NotifyError from "../utils/notifications/NotifyError";
 import getCookie from "../utils/getCookie";
 import BallotCards from "./BallotCards";
+import ActionLoader from "./ActionLoader";
 
 const SelectGroup = () => {
   const [userGroups, setUserGroups] = useState([]);
   const [members, setMembers] = useState([]);
   const [selectedGroup, setSelectedGroup] = useState("");
+  const [loading, setLoading] = useState(true);
 
   const getAllMembers = async () => {
     try {
@@ -15,7 +17,7 @@ const SelectGroup = () => {
       setMembers(res.data.members);
     } catch (error) {
       if (error.response.status === 401) {
-        NotifyError("Unauthorized! Please login");
+        NotifyError("Unauthorized Access!");
       } else {
         NotifyError(error.response.data.message);
       }
@@ -28,6 +30,8 @@ const SelectGroup = () => {
       setUserGroups(res.data.members);
     } catch (error) {
       console.log(error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -64,15 +68,19 @@ const SelectGroup = () => {
   return (
     <div>
       <div className="py-2 px-4 mb-8 mx-auto max-w-screen-sm text-center lg:py-2  relative">
-        {sortedGroups.length > 0 ? (
+        {loading ? (
+          <ActionLoader title="Loading..." />
+        ) : sortedGroups.length > 0 ? (
+          // Render select dropdown after sortedGroups have finished loading
           <select
             value={selectedGroup}
             onChange={handleOnChange}
             className="bg-gray-50 border h-12 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-            <option value="">Select a Group</option>
+            <option value="">Select a group to ballot</option>
             {options}
           </select>
         ) : (
+          // Render the "You do not belong to any group" message when there are no groups
           <div className="pb-8 border bg-blue-100 rounded-md">
             <p className="p-8 text-2xl font-normal tracking-tight leading-none text-gray-700 md:text-2xl lg:text-2xl dark:text-white">
               You do not belong to any group <br />

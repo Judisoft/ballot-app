@@ -32,12 +32,12 @@ const CreateGroupCard = () => {
           },
         }
       );
-      console.log(res);
       NotifySuccess(`${res.data.message}`);
       setIsSubmitted(true);
       groupNameRef.current = groupName;
     } catch (error) {
-      NotifyError(`${error.response.data.message}`);
+      const errors = error.response.data.errors;
+      errors.map((error) => NotifyError(error));
     } finally {
       setLoading(false);
     }

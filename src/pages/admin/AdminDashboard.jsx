@@ -22,6 +22,7 @@ const AdminDashboard = () => {
             Authorization: `Bearer ${token}`,
           },
         });
+        console.log(response.data.users);
         setUsers(response.data.users);
       } catch (error) {
         console.log(error);

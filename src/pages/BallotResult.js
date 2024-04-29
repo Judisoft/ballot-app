@@ -8,12 +8,14 @@ import { jsPDF } from "jspdf";
 import "jspdf-autotable";
 import JsBarcode from "jsbarcode";
 import getBarcodeValue from "../utils/getBarcodeValue";
+import ActionLoader from "../components/ActionLoader";
 
 const BallotResult = () => {
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
   const group = searchParams.get("group");
   const [ballotResult, setBallotResult] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const getBallotResult = async () => {
@@ -31,6 +33,8 @@ const BallotResult = () => {
         setBallotResult(res.data.ballotList);
       } catch (error) {
         console.log(error);
+      } finally {
+        setLoading(false);
       }
     };
     getBallotResult();
@@ -100,28 +104,32 @@ const BallotResult = () => {
       <Jumbotron title={`Ballot result for ${group}`} />
       <section className="bg-white mb-16 dark:bg-gray-900 dark:bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg')]">
         <div className="flex justify-center items-center px-4 mx-auto max-w-screen-xl text-center relative">
-          <div className="w-1/2 p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
+          <div className="w-1/2 p-4 bg-white sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
             <div className="relative overflow-x-auto">
               <table className="w-full max-w-xl mx-auto  rtl:text-right dark:text-gray-400">
-                <thead className="font-normal text-left text-gray-700  bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                  <tr>
-                    <th
-                      scope="col"
-                      className="px-6 py-3 font-semibold text-md text-gray-700">
-                      Rank
-                    </th>
-                    <th
-                      scope="col"
-                      className="px-6 py-3 font-semibold text-md text-gray-700">
-                      Name
-                    </th>
-                    <th
-                      scope="col"
-                      className="px-6 py-3 font-semibold text-md text-gray-700">
-                      Date Balloted
-                    </th>
-                  </tr>
-                </thead>
+                {ballotResult.lenth > 0 ? (
+                  <thead className="font-normal text-left text-gray-700  bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                    <tr>
+                      <th
+                        scope="col"
+                        className="px-6 py-3 font-semibold text-md text-gray-700">
+                        Rank
+                      </th>
+                      <th
+                        scope="col"
+                        className="px-6 py-3 font-semibold text-md text-gray-700">
+                        Name
+                      </th>
+                      <th
+                        scope="col"
+                        className="px-6 py-3 font-semibold text-md text-gray-700">
+                        Date Balloted
+                      </th>
+                    </tr>
+                  </thead>
+                ) : (
+                  ""
+                )}
                 <tbody>
                   {ballotResult.length > 0 ? (
                     // Sort the ballotResult array by rank before mapping over it to order by rank
@@ -137,20 +145,29 @@ const BallotResult = () => {
                           <td className="px-6 py-4 text-md text-gray-500">
                             {result.userName}
                           </td>
-
-                          <td className="px-6 py-4  text-md text-gray-500">
+                          <td className="px-6 py-4 text-md text-gray-500">
                             {dateFormatter(result.created_at)}
                           </td>
                         </tr>
                       ))
                   ) : (
-                    <tr className="text-center">No one has balloted yet</tr>
+                    <tr className="text-center">
+                      <td colSpan="3">
+                        {loading ? (
+                          <ActionLoader title="Loading..." />
+                        ) : (
+                          "No one has balloted yet"
+                        )}
+                      </td>
+                    </tr>
                   )}
                 </tbody>
               </table>
               <div className="flex justify-center pt-8">
                 <button
-                  className="flex text-white hover:text-white bg-blue-600 hover:bg-blue-700  font-medium rounded-lg text-md px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700"
+                  className={`${
+                    ballotResult.length > 0 ? "" : "hidden"
+                  } flex text-white hover:text-white bg-blue-600 hover:bg-blue-700  font-medium rounded-lg text-md px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700`}
                   onClick={generatePDF}>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
