@@ -1,8 +1,8 @@
-# Getting Started with Ballot App
+# Getting Started with 'Njangi' Ballot App
 
 ## What is 'Njangi'?
 
-'Njangi' is a Cameroonian term for an institutional practice whereby individuals decide to come together usually to form a group that meets on a regular basis for the purpose of saving and/or raising money for the mutual benefit of all participants. These participants go through a ballot system to decide the order in which the members will benefit. This used to be a practice among the elderly where they will meet weekly to make contributions but ever since MTN Mobile Money and Orange Money surfaced, young people have embraced the concept of 'Njangi'. Most 'Njangi' groups among young people do not require a physical gathering, they make contributions through e-wallet systems to the admin who then transfers the money to the beneficiary.
+'Njangi' is a Cameroonian term for an institutional practice whereby individuals decide to come together usually to form a group that meets on a regular basis for the purpose of saving and/or raising money for the mutual benefit of all participants. These participants go through a ballot system to decide the order in which the members will benefit. This used to be a practice among the elderly where they will meet weekly to make contributions but ever since MTN Mobile Money and Orange Money surfaced, young people have embraced the concept of 'Njangi'. Most 'Njangi' groups among young people do not require a physical gathering, they make contributions through e-wallet systems to the admin who then transfers the money to the beneficiary. Many West African countries practice 'Njangi', just with different appellations.
 
 ## What does 'Njangi' Ballot App do?
 
