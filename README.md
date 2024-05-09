@@ -1,4 +1,4 @@
-# Getting Started with Create Ballot App
+# Getting Started with Ballot App
 
 ## What is 'Njangi'?
 
