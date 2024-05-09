@@ -71,7 +71,6 @@ const SelectGroup = () => {
         {loading ? (
           <ActionLoader title="Loading..." />
         ) : sortedGroups.length > 0 ? (
-          // Render select dropdown after sortedGroups have finished loading
           <select
             value={selectedGroup}
             onChange={handleOnChange}

@@ -1,6 +1,12 @@
-# Getting Started with Create React App
+# Getting Started with Create Ballot App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## What is 'Njangi'?
+
+'Njangi' is a Cameroonian term for an institutional practice whereby individuals decide to come together usually to form a group that meets on a regular basis for the purpose of saving and/or raising money for the mutual benefit of all participants. These participants go through a ballot system to decide the order in which the members will benefit. This used to be a practice among the elderly where they will meet weekly to make contributions but ever since MTN Mobile Money and Orange Money surfaced, young people have embraced the concept of 'Njangi'. Most 'Njangi' groups among young people do not require a physical gathering, they make contributions through e-wallet systems to the admin who then transfers the money to the beneficiary.
+
+## What does 'Njangi' Ballot App do?
+
+'Njangi' Ballot is a web application that redefines the balloting process for 'Njangi' groups to determine the order of Beneficiaries. It provides a reliable, transparent, and user-friendly interface for balloting. This application ensures fairness and equal opportunity for all members, prioritizing reliability, transparency, and security. Say goodbye to manual processes as 'Njangi' Ballot automates and streamlines the ballot, saving time and effort. Accessible from anywhere, at any time, start using 'Njangi' Ballot today for a seamless balloting experience tailored for 'Njangi' groups.
 
 ## Available Scripts
 
@@ -39,32 +45,9 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+## Author
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Kum Jude Bama, Software Engineer
+Email: kumjude09@gmail.com
+LinkedIn: [Kum Jude Bama](https://www.linkedin.com/in/kum-jude-bama-b73645226/)
+X: [Kum Jude Bama](https://twitter.com/kumjudebama)
