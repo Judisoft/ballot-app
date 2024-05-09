@@ -47,7 +47,7 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 
 ## Author
 
-Kum Jude Bama, Software Engineer
-Email: kumjude09@gmail.com
-LinkedIn: [Kum Jude Bama](https://www.linkedin.com/in/kum-jude-bama-b73645226/)
-X: [Kum Jude Bama](https://twitter.com/kumjudebama)
+Kum Jude Bama, Software Engineer \
+Email: kumjude09@gmail.com \
+LinkedIn: [Kum Jude Bama](https://www.linkedin.com/in/kum-jude-bama-b73645226/) \
+X: [Kum Jude Bama](https://twitter.com/kumjudebama) \
