@@ -143,7 +143,7 @@ const CreateGroupCard = () => {
             )}
             <div className="pt-8">
               <Link
-                href="/groups/add-member"
+                to="/groups/add-member"
                 className="text-blue-600 dark:text-blue-500 hover:underline font-medium text-sm inline-flex items-center">
                 Add member to an existing group
                 <svg
