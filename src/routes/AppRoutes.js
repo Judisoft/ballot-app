@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Ballot from "../pages/Ballot";
 import Homepage from "../pages/Homepage";
 import Register from "../pages/auth/Register";
@@ -18,95 +18,91 @@ import AdminDashboard from "../pages/admin/AdminDashboard";
 
 const AppRoutes = () => {
   return (
-    <div>
-      <Router>
-        <Routes>
-          <Route path="/" element={<Homepage />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/about" element={<About />} />
-          <Route
-            path="/login"
-            element={
-              <AuthRouteGuard redirectTo="/ballot">
-                <Login />
-              </AuthRouteGuard>
-            }
-          />
-          <Route
-            path="/admin/dashboard"
-            element={
-              <ProtectedRoute redirectTo="/login">
-                <AdminDashboard />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/reset-password"
-            element={
-              <AuthRouteGuard redirectTo="/ballot">
-                <ResetPassword />
-              </AuthRouteGuard>
-            }
-          />
-          <Route
-            path="/reset-password/:token"
-            element={
-              <AuthRouteGuard redirectTo="/ballot">
-                <ChangePassword />
-              </AuthRouteGuard>
-            }
-          />
-          <Route
-            path="/register"
-            element={
-              <AuthRouteGuard redirectTo="/ballot">
-                <Register />
-              </AuthRouteGuard>
-            }
-          />
-          <Route
-            path="/ballot"
-            element={
-              <ProtectedRoute redirectTo="/login">
-                <Ballot />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/groups/add-member"
-            element={
-              <ProtectedRoute redirectTo="/login">
-                <AddMember />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/groups"
-            element={
-              <ProtectedRoute redirectTo="/login">
-                <CreateGroup />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/ballots/groups"
-            element={
-              <ProtectedRoute redirectTo="/login">
-                <BallotGroups />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/ballots/:group/result"
-            element={
-              <ProtectedRoute redirectTo="/login">
-                <BallotResult />
-              </ProtectedRoute>
-            }
-          />
-        </Routes>
-      </Router>
-    </div>
+    <Routes>
+      <Route path="/" element={<Homepage />} />
+      <Route path="/contact" element={<Contact />} />
+      <Route path="/about" element={<About />} />
+      <Route
+        path="/login"
+        element={
+          <AuthRouteGuard redirectTo="/ballot">
+            <Login />
+          </AuthRouteGuard>
+        }
+      />
+      <Route
+        path="/admin/dashboard"
+        element={
+          <ProtectedRoute redirectTo="/login">
+            <AdminDashboard />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/reset-password"
+        element={
+          <AuthRouteGuard redirectTo="/ballot">
+            <ResetPassword />
+          </AuthRouteGuard>
+        }
+      />
+      <Route
+        path="/reset-password/:token"
+        element={
+          <AuthRouteGuard redirectTo="/ballot">
+            <ChangePassword />
+          </AuthRouteGuard>
+        }
+      />
+      <Route
+        path="/register"
+        element={
+          <AuthRouteGuard redirectTo="/ballot">
+            <Register />
+          </AuthRouteGuard>
+        }
+      />
+      <Route
+        path="/ballot"
+        element={
+          <ProtectedRoute redirectTo="/login">
+            <Ballot />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/groups/add-member"
+        element={
+          <ProtectedRoute redirectTo="/login">
+            <AddMember />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/groups"
+        element={
+          <ProtectedRoute redirectTo="/login">
+            <CreateGroup />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/ballots/groups"
+        element={
+          <ProtectedRoute redirectTo="/login">
+            <BallotGroups />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/ballots/:group/result"
+        element={
+          <ProtectedRoute redirectTo="/login">
+            <BallotResult />
+          </ProtectedRoute>
+        }
+      />
+    </Routes>
   );
 };
 
