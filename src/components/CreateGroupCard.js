@@ -1,4 +1,5 @@
 import React, { useState, useRef } from "react";
+import { Link } from "react-router-dom";
 import NotifySuccess from "../utils/notifications/NotifySuccess";
 import NotifyError from "../utils/notifications/NotifyError";
 import axios from "axios";
@@ -141,7 +142,7 @@ const CreateGroupCard = () => {
               </form>
             )}
             <div className="pt-8">
-              <a
+              <Link
                 href="/groups/add-member"
                 className="text-blue-600 dark:text-blue-500 hover:underline font-medium text-sm inline-flex items-center">
                 Add member to an existing group
@@ -159,7 +160,7 @@ const CreateGroupCard = () => {
                     d="M1 5h12m0 0L9 1m4 4L9 9"
                   />
                 </svg>
-              </a>
+              </Link>
             </div>
           </div>
         </div>

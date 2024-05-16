@@ -4,6 +4,7 @@ import NotifyError from "../utils/notifications/NotifyError";
 import getCookie from "../utils/getCookie";
 import BallotCards from "./BallotCards";
 import ActionLoader from "./ActionLoader";
+import { Link } from "react-router-dom";
 
 const SelectGroup = () => {
   const [userGroups, setUserGroups] = useState([]);
@@ -84,11 +85,11 @@ const SelectGroup = () => {
             <p className="p-8 text-2xl font-normal tracking-tight leading-none text-gray-700 md:text-2xl lg:text-2xl dark:text-white">
               You do not belong to any group <br />
             </p>
-            <a
-              href="/groups"
+            <Link
+              to="/groups"
               className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-bold  rounded-lg text-md px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
               Create Group
-            </a>
+            </Link>
           </div>
         )}
         {members.length > 0 && (

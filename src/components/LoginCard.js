@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import ValidateEmail from "../utils/ValidateEmail";
 import setCookie from "./../utils/setCookie";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import {
   checkAuthentication,
   getAuthUserInfo,
@@ -137,11 +138,11 @@ const LoginCard = () => {
                     Remember me
                   </label>
                 </div>
-                <a
-                  href="/reset-password"
+                <Link
+                  to="/reset-password"
                   className="ms-auto text-sm text-blue-700 hover:underline dark:text-blue-500">
                   Forgot Password?
-                </a>
+                </Link>
               </div>
               <button
                 type="submit"
@@ -154,11 +155,11 @@ const LoginCard = () => {
               </button>
               <div className="text-sm font-medium text-gray-500 dark:text-gray-300">
                 Not registered?{" "}
-                <a
-                  href="/register"
+                <Link
+                  to="/register"
                   className="text-blue-700 hover:underline dark:text-blue-500">
                   Create account
-                </a>
+                </Link>
               </div>
             </form>
           </div>

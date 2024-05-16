@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import PrivacyPolicyModal from "../components/modals/PrivacyPolicy";
 import LicenceModal from "../components/modals/Licence";
 
@@ -22,40 +23,40 @@ const Footer = () => {
           <div className="hidden md:block lg:block">
             <ul className="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
               <li>
-                <a href="/about" className="hover:underline me-4 md:me-6">
+                <Link to="/about" className="hover:underline me-4 md:me-6">
                   About
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#PrivacyPolicy"
+                <Link
+                  to="#PrivacyPolicy"
                   onClick={togglePrivacyPolicyModal}
                   className="hover:underline me-4 md:me-6">
                   Privacy
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#Licensing"
+                <Link
+                  to="#Licensing"
                   onClick={toggleLicenceModal}
                   className="hover:underline me-4 md:me-6">
                   Licensing
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/contact" className="hover:underline">
+                <Link to="/contact" className="hover:underline">
                   Contact
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
           <div className="mt-8 md:mt-0">
             <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
               © {new Date().getFullYear()}
-              <a href="/" className="hover:underline">
+              <Link to="/" className="hover:underline">
                 {" "}
                 NjangiBallot.com
-              </a>
+              </Link>
               . All Rights Reserved.
             </span>
           </div>

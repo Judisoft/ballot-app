@@ -4,6 +4,7 @@ import NotifyError from "../utils/notifications/NotifyError";
 import axios from "axios";
 import getCookie from "../utils/getCookie";
 import ActionLoader from "./ActionLoader";
+import { Link } from "react-router-dom";
 
 const AddMemberCard = () => {
   const [groupName, setGroupName] = useState("");
@@ -126,8 +127,8 @@ const AddMemberCard = () => {
               </form>
             </div>
             <div className="pt-8">
-              <a
-                href="/groups"
+              <Link
+                to="/groups"
                 className="text-blue-600 dark:text-blue-500 hover:underline font-medium text-sm inline-flex items-center">
                 Create New Group
                 <svg
@@ -144,7 +145,7 @@ const AddMemberCard = () => {
                     d="M1 5h12m0 0L9 1m4 4L9 9"
                   />
                 </svg>
-              </a>
+              </Link>
             </div>
           </div>
         </div>

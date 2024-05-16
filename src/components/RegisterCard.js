@@ -157,8 +157,8 @@ const RegisterCard = () => {
                 </button>
                 <div className="text-sm font-medium text-gray-500 dark:text-gray-300">
                   Did not receive the code?{" "}
-                  <a
-                    href="/login"
+                  <Link
+                    to="/login"
                     className="text-blue-700 hover:underline dark:text-blue-500"
                     onClick={(e) => {
                       e.preventDefault();
@@ -169,7 +169,7 @@ const RegisterCard = () => {
                     ) : (
                       "Resend OTP"
                     )}
-                  </a>
+                  </Link>
                 </div>
               </form>
             ) : (
@@ -278,11 +278,11 @@ const RegisterCard = () => {
                 </button>
                 <div className="text-sm font-medium text-gray-500 dark:text-gray-300">
                   Already registered?{" "}
-                  <a
-                    href="/login"
+                  <Link
+                    to="/login"
                     className="text-blue-700 hover:underline dark:text-blue-500">
                     Login
-                  </a>
+                  </Link>
                 </div>
               </form>
             )}
