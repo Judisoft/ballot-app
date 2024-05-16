@@ -7,6 +7,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import ValidateEmail from "../utils/ValidateEmail";
 import ActionLoader from "./ActionLoader";
+import { Link } from "react-router-dom";
 
 const RegisterCard = () => {
   const navigate = useNavigate();
