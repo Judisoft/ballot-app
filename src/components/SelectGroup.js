@@ -14,7 +14,9 @@ const SelectGroup = () => {
 
   const getAllMembers = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/v1/members");
+      const res = await axios.get(
+        "https://ballot-app-backend.onrender.com/api/v1/members"
+      );
       setMembers(res.data.members);
     } catch (error) {
       if (error.response.status === 401) {
@@ -27,7 +29,9 @@ const SelectGroup = () => {
 
   const getUserGroups = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/v1/members");
+      const res = await axios.get(
+        "https://ballot-app-backend.onrender.com/api/v1/members"
+      );
       setUserGroups(res.data.members);
     } catch (error) {
       console.log(error);

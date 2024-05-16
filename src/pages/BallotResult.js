@@ -22,7 +22,7 @@ const BallotResult = () => {
       try {
         const token = getCookie("token");
         const res = await axios.post(
-          "http://localhost:5000/api/v1/ballots/ranks",
+          "https://ballot-app-backend.onrender.com/api/v1/ballots/ranks",
           { group },
           {
             headers: {

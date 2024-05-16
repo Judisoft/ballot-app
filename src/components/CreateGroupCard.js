@@ -25,7 +25,7 @@ const CreateGroupCard = () => {
       setLoading(true);
       const token = getCookie("token");
       const res = await axios.post(
-        "http://localhost:5000/api/v1/groups",
+        "https://ballot-app-backend.onrender.com/api/v1/groups",
         data,
         {
           headers: {
@@ -55,7 +55,7 @@ const CreateGroupCard = () => {
         setAddMemberLoading(true);
         const token = getCookie("token");
         const res = await axios.post(
-          "http://localhost:5000/api/v1/members",
+          "https://ballot-app-backend.onrender.com/api/v1/members",
           userInfo,
           {
             headers: {
