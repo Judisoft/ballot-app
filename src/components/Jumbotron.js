@@ -1,6 +1,6 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
-import Typed from "react-typed";
+import { ReactTyped } from "react-typed";
 import Readmore from "./Readmore";
 
 const Jumbotron = ({ title, desc, readmore }) => {
@@ -13,7 +13,7 @@ const Jumbotron = ({ title, desc, readmore }) => {
             <h1 className="mb-8 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-8xl dark:text-white">
               Ballot with{" "}
               <span className="text-blue-700">
-                <Typed
+                <ReactTyped
                   strings={["Ease!", "Convenience!", "Confidence!"]}
                   typeSpeed={100}
                   backSpeed={40}
