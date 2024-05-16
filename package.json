@@ -26,7 +26,6 @@
     "yup": "^1.3.3"
   },
   "scripts": {
-    "install": "npm install --legacy-peer-deps",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
