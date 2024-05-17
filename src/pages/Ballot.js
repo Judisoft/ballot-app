@@ -8,13 +8,13 @@ const Ballot = () => {
   const user = useSelector((state) => state.authentication.authUser);
 
   return (
-    <div>
+    <div className="mb-16">
       <Jumbotron
         title={"Njangi Groups"}
         desc={`(Logged in as: ${user.name})`}
       />
       <SelectForm />
-      <div className="mx-auto max-w-screen-sm text-center relative mb-12">
+      <div className="mx-auto max-w-screen-sm text-center relative mb-8">
         <Readmore message="Go to my groups" link={"/ballots/groups"} />
       </div>
     </div>
