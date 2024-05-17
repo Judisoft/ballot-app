@@ -26,13 +26,18 @@ const Navbar = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const handleMenuItemClick = () => {
+    setIsMenuOpen(false);
+  };
+
   return (
     <div>
       <nav className="bg-white border-b border-gray-100  fixed w-full top-0 start-0 z-20  ">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <Link
             to="/"
-            className="flex items-center space-x-3 rtl:space-x-reverse">
+            className="flex items-center space-x-3 rtl:space-x-reverse"
+            onClick={handleMenuItemClick}>
             <span className="self-center text-2xl font-bold text-gray-700 whitespace-nowrap ">
               <img src={logo} alt="logo" className="h-16 w-16" />
             </span>
@@ -48,12 +53,14 @@ const Navbar = () => {
               <>
                 <Link
                   to="/register"
-                  className="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-bold rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center  :bg-blue-700 :ring-blue-800">
+                  className="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-bold rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center  :bg-blue-700 :ring-blue-800"
+                  onClick={handleMenuItemClick}>
                   Get started
                 </Link>
                 <Link
                   to="/login"
-                  className="text-gray-700 bg-transparent  focus:outline-none font-bold rounded-lg text-sm px-4 py-2 text-center ">
+                  className="text-gray-700 bg-transparent  focus:outline-none font-bold rounded-lg text-sm px-4 py-2 text-center "
+                  onClick={handleMenuItemClick}>
                   Login
                 </Link>
               </>
@@ -101,35 +108,40 @@ const Navbar = () => {
               <li>
                 <Link
                   to="/"
-                  className="block py-2 px-3 text-gray-700  rounded md:bg-transparent md:p-0 md:hover:text-blue-700 md:">
+                  className="block py-2 px-3 text-gray-700  rounded md:bg-transparent md:p-0 md:hover:text-blue-700 md:"
+                  onClick={handleMenuItemClick}>
                   Home
                 </Link>
               </li>
               <li>
                 <Link
                   to="/about"
-                  className="block py-2 px-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md::text-blue-500  :bg-gray-700 :text-white md::bg-transparent ">
+                  className="block py-2 px-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md::text-blue-500  :bg-gray-700 :text-white md::bg-transparent "
+                  onClick={handleMenuItemClick}>
                   About
                 </Link>
               </li>
               <li>
                 <Link
                   to="/ballot"
-                  className="block py-2 px-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md::text-blue-500  :bg-gray-700 :text-white md::bg-transparent ">
+                  className="block py-2 px-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md::text-blue-500  :bg-gray-700 :text-white md::bg-transparent "
+                  onClick={handleMenuItemClick}>
                   Ballot
                 </Link>
               </li>
               <li>
                 <Link
                   to="/groups"
-                  className="block py-2 px-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md::text-blue-500  :bg-gray-700 :text-white md::bg-transparent ">
+                  className="block py-2 px-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md::text-blue-500  :bg-gray-700 :text-white md::bg-transparent "
+                  onClick={handleMenuItemClick}>
                   Groups
                 </Link>
               </li>
               <li>
                 <Link
                   to="/contact"
-                  className="block py-2 px-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md::text-blue-500  :bg-gray-700 :text-white md::bg-transparent ">
+                  className="block py-2 px-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md::text-blue-500  :bg-gray-700 :text-white md::bg-transparent "
+                  onClick={handleMenuItemClick}>
                   Contact Us
                 </Link>
               </li>
@@ -141,35 +153,40 @@ const Navbar = () => {
                 <li>
                   <Link
                     to="/"
-                    className="block py-2 px-3 text-gray-700  rounded md:bg-transparent md:p-0 md:hover:text-blue-700 md:">
+                    className="block py-2 px-3 text-gray-700  rounded md:bg-transparent md:p-0 md:hover:text-blue-700 md:"
+                    onClick={handleMenuItemClick}>
                     Home
                   </Link>
                 </li>
                 <li>
                   <Link
                     to="/about"
-                    className="block py-2 px-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md::text-blue-500  :bg-gray-700 :text-white md::bg-transparent ">
+                    className="block py-2 px-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md::text-blue-500  :bg-gray-700 :text-white md::bg-transparent "
+                    onClick={handleMenuItemClick}>
                     About
                   </Link>
                 </li>
                 <li>
                   <Link
                     to="/ballot"
-                    className="block py-2 px-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md::text-blue-500  :bg-gray-700 :text-white md::bg-transparent ">
+                    className="block py-2 px-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md::text-blue-500  :bg-gray-700 :text-white md::bg-transparent "
+                    onClick={handleMenuItemClick}>
                     Ballot
                   </Link>
                 </li>
                 <li>
                   <Link
                     to="/groups"
-                    className="block py-2 px-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md::text-blue-500  :bg-gray-700 :text-white md::bg-transparent ">
+                    className="block py-2 px-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md::text-blue-500  :bg-gray-700 :text-white md::bg-transparent "
+                    onClick={handleMenuItemClick}>
                     Group Manager
                   </Link>
                 </li>
                 <li>
                   <Link
                     to="/contact"
-                    className="block py-2 px-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md::text-blue-500  :bg-gray-700 :text-white md::bg-transparent ">
+                    className="block py-2 px-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md::text-blue-500  :bg-gray-700 :text-white md::bg-transparent "
+                    onClick={handleMenuItemClick}>
                     Contact Us
                   </Link>
                 </li>
