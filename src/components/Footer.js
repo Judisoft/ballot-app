@@ -18,7 +18,7 @@ const Footer = () => {
 
   return (
     <div>
-      <footer className="fixed bottom-0 left-0 w-full p-1 z-20  bg-gray-50 border-gray-200 md:flex md:items-center md:justify-between md:p-4  ">
+      <footer className="fixed bottom-0 left-0 w-full p-1  bg-gray-50 border-gray-200 md:flex md:items-center md:justify-between md:p-4  ">
         <div className="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
           <div className="hidden md:block lg:block">
             {/* <ul className="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500  sm:mt-0">
