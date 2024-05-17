@@ -8,7 +8,7 @@ const Ballot = () => {
   const user = useSelector((state) => state.authentication.authUser);
 
   return (
-    <div className="mb-16">
+    <div className="mb-32">
       <Jumbotron
         title={"Njangi Groups"}
         desc={`(Logged in as: ${user.name})`}
