@@ -61,7 +61,7 @@ const Footer = () => {
                 to="#Licensing"
                 onClick={toggleLicenceModal}
                 className="hover:underline me-4 md:me-6">
-                Licensing
+                License
               </Link>
               <Link
                 to="#PrivacyPolicy"
