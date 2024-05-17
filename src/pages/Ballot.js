@@ -14,7 +14,7 @@ const Ballot = () => {
         desc={`(Logged in as: ${user.name})`}
       />
       <SelectForm />
-      <div className="mx-auto max-w-screen-sm text-center relative">
+      <div className="mx-auto max-w-screen-sm text-center relative mb-12">
         <Readmore message="Go to my groups" link={"/ballots/groups"} />
       </div>
     </div>
