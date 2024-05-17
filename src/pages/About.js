@@ -5,22 +5,40 @@ import { Link } from "react-router-dom";
 const About = () => {
   return (
     <div>
-      <Jumbotron title={"Designed for 'Njangi' Groups in mind"} />
+      <Jumbotron title={"'Njangi' Ballot App"} />
       <section className="bg-white  p-3">
         <div className="pb-16 lg:px-16 mx-auto max-w-screen-xl">
           <div className="max-w-screen-xl text-justify mb-8 lg:mb-16">
+            <h3 className="text-gray-900 font-bold py-2 sm:text-xl ">
+              What is 'Njangi'?
+            </h3>
             <p className="text-gray-900 sm:text-xl ">
-              The Njangi Ballot app revolutionizes the way Njangi groups carry
-              out their balloting processes. It provides a reliable,
-              transparent, and easy-to-use platform for Njangi groups to conduct
-              their balloting with utmost convenience.
+              'Njangi' is a Cameroonian term for an institutional practice
+              whereby individuals decide to come together usually to form a
+              group that meets on a regular basis for the purpose of saving
+              and/or raising money for the mutual benefit of all participants.
+              These participants go through a ballot system to decide the order
+              in which the members will benefit. This used to be a practice
+              among the elderly where they will meet weekly to make
+              contributions but ever since MTN Mobile Money and Orange Money
+              surfaced, young people have embraced the concept of 'Njangi'. Most
+              'Njangi' groups among young people do not require a physical
+              gathering, they make contributions through e-wallet systems to the
+              admin who then transfers the money to the beneficiary. Many West
+              African countries practice 'Njangi', just with different
+              appellations.
             </p>
             <p className="text-gray-900 sm:text-xl ">
-              This app understands the importance of fairness and transparency
-              in Njangi groups and balloting in general, where each member
-              deserves an equal chance to benefit. With Njangi Ballot app, we
-              bring you a robust and secure ballot system that ensures every
-              participant has an equal opportunity.
+              'Njangi' Ballot is a web application that redefines the balloting
+              process for 'Njangi' groups to determine the order of
+              Beneficiaries. It provides a reliable, transparent, and
+              user-friendly interface for balloting. This application ensures
+              fairness and equal opportunity for all members, prioritizing
+              reliability, transparency, and security. Say goodbye to manual
+              processes as 'Njangi' Ballot automates and streamlines the ballot,
+              saving time and effort. Accessible from anywhere, at any time,
+              start using 'Njangi' Ballot today for a seamless balloting
+              experience tailored for 'Njangi' groups.
             </p>
           </div>
           <div className="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0">
@@ -153,7 +171,7 @@ const About = () => {
         <div className="py-4 px-4 mx-auto max-w-screen-xl sm:mb-32 lg:px-6">
           <div className="mx-auto max-w-screen-sm text-center">
             <h2 className="mb-8 text-4xl tracking-tight font-extrabold leading-tight text-gray-900 ">
-              Start using Njangi Ballot today
+              Start using Njangi Ballot App today
             </h2>
             <p className="mb-6 text-gray-500  md:text-lg">
               Join Njangi Ballot today and experience the convenience of a
