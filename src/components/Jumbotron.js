@@ -8,7 +8,7 @@ const Jumbotron = ({ title, desc, readmore }) => {
   return (
     <div>
       <section className="mt-16 bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')]">
-        <div className="py-16 px-4 mx-auto max-w-screen-xl text-center lg:py-16 relative">
+        <div className="pt-16 px-4 mx-auto max-w-screen-xl text-center lg:py-16 relative">
           {location.pathname === "/" ? (
             <h1 className="mb-8 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-8xl ">
               Ballot with{" "}
