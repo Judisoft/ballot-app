@@ -5,22 +5,22 @@ import { Link } from "react-router-dom";
 const About = () => {
   return (
     <div>
-      <Jumbotron title={"Designed for 'Njangi' Groups"} />
+      <Jumbotron title={"Designed for 'Njangi' Groups in mind"} />
       <section className="bg-white  p-3">
         <div className="pb-16 lg:px-16 mx-auto max-w-screen-xl">
           <div className="max-w-screen-xl text-justify mb-8 lg:mb-16">
             <p className="text-gray-900 sm:text-xl ">
-              At Njangi Ballot, we revolutionize the way Njangi groups carry out
-              their balloting processes. Our web application provides a
-              reliable, transparent, and easy-to-use platform for Njangi groups
-              to conduct their balloting with utmost convenience.
+              The Njangi Ballot app revolutionizes the way Njangi groups carry
+              out their balloting processes. It provides a reliable,
+              transparent, and easy-to-use platform for Njangi groups to conduct
+              their balloting with utmost convenience.
             </p>
             <p className="text-gray-900 sm:text-xl ">
-              We understand the importance of fairness and transparency in
-              Njangi groups, where each member deserves an equal chance to
-              benefit. With Njangi Ballot, we bring you a robust and secure
-              ballot system that ensures every participant has an equal
-              opportunity to win.
+              This app understands the importance of fairness and transparency
+              in Njangi groups and balloting in general, where each member
+              deserves an equal chance to benefit. With Njangi Ballot app, we
+              bring you a robust and secure ballot system that ensures every
+              participant has an equal opportunity.
             </p>
           </div>
           <div className="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0">
@@ -39,9 +39,9 @@ const About = () => {
               </div>
               <h3 className="mb-2 text-xl font-bold ">Reliability</h3>
               <p className="text-gray-500  ">
-                We prioritize the reliability of our platform to ensure a
-                seamless and trustworthy balloting experience for your Njangi
-                group.
+                It prioritizes reliability to ensure a seamless and trustworthy
+                balloting experience for your Njangi group and general purpose
+                balloting process.
               </p>
             </div>
             <div className="border border-blue-100 bg-gray-50 p-3 rounded-lg">
@@ -56,9 +56,9 @@ const About = () => {
               </div>
               <h3 className="mb-2 text-xl font-bold ">Transparency</h3>
               <p className="text-gray-500 ">
-                Transparency is at the core of Njangi Ballot. We provide a fully
-                transparent ballot process, giving each member visibility into
-                the entire balloting procedure.
+                Transparency is at the core of Njangi Ballot app. It provides a
+                fully transparent ballot process, giving each member visibility
+                into the entire balloting procedure.
               </p>
             </div>
             <div className="border border-blue-100 bg-gray-50 p-3 rounded-lg">
@@ -96,7 +96,7 @@ const About = () => {
               <h3 className="mb-2 text-xl font-bold ">Security</h3>
               <p className="text-gray-500 ">
                 Protecting the integrity of your Njangi group is our top
-                priority. Njangi Ballot employs robust security measures to
+                priority. Njangi Ballot app employs robust security measures to
                 safeguard your data and maintain the confidentiality of your
                 group's information. You can trust that your ballots are secure,
                 and the system is resistant to any form of manipulation or bias.
@@ -117,8 +117,8 @@ const About = () => {
               </div>
               <h3 className="mb-2 text-xl font-bold ">Efficiency</h3>
               <p className="text-gray-500 ">
-                Say goodbye to manual ballot! Njangi Ballot automates the ballot
-                process, saving your group valuable time and effort. Our
+                Say goodbye to manual ballots! Njangi Ballot app automates the
+                ballot process, saving your group valuable time and effort. Our
                 efficient system generates results quickly, allowing you to
                 proceed with your Njangi activities promptly.
               </p>
@@ -139,7 +139,7 @@ const About = () => {
               </div>
               <h3 className="mb-2 text-xl font-bold ">Accessibility</h3>
               <p className="text-gray-500 ">
-                Njangi Ballot is a web-based application, which means you can
+                Njangi Ballot app is a web application, which means you can
                 access it from anywhere, at any time, using any device with an
                 internet connection. Whether you're at home, in the office, or
                 on the go, managing your Njangi group's ballot has never been
@@ -162,7 +162,7 @@ const About = () => {
             </p>
             <Link
               to="/register"
-              className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-bold rounded-lg text-lg px-5 py-2.5 mr-2 mb-2  :bg-blue-700 focus:outline-none :ring-blue-800">
+              className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-normal rounded-lg text-lg px-5 py-2.5 mr-2 mb-2  :bg-blue-700 focus:outline-none :ring-blue-800">
               Start for FREE!
             </Link>
           </div>

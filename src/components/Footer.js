@@ -50,7 +50,7 @@ const Footer = () => {
               </li>
             </ul> */}
           </div>
-          <div className="mt-8 md:mt-0">
+          <div className="mt-2 md:mt-0">
             <span className="text-sm text-gray-500 sm:text-center ">
               © {new Date().getFullYear()}
               <Link to="/" className="hover:underline me-4 md:me-6">
