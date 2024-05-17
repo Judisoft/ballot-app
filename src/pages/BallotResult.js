@@ -104,32 +104,28 @@ const BallotResult = () => {
       <Jumbotron title={`Ballot result for ${group}`} />
       <section className="bg-white mb-16  ('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg')]">
         <div className="flex justify-center items-center px-4 mx-auto max-w-screen-xl text-center relative">
-          <div className="w-1/2 p-4 bg-white sm:p-6 md:p-8  ">
+          <div className="w-full mx-auto p-4 bg-white sm:p-6 md:p-8  ">
             <div className="relative overflow-x-auto">
               <table className="w-full max-w-xl mx-auto  rtl:text-right ">
-                {ballotResult.lenth > 0 ? (
-                  <thead className="font-normal text-left text-gray-700  bg-gray-50  ">
-                    <tr>
-                      <th
-                        scope="col"
-                        className="px-6 py-3 font-semibold text-md text-gray-700">
-                        Rank
-                      </th>
-                      <th
-                        scope="col"
-                        className="px-6 py-3 font-semibold text-md text-gray-700">
-                        Name
-                      </th>
-                      <th
-                        scope="col"
-                        className="px-6 py-3 font-semibold text-md text-gray-700">
-                        Date Balloted
-                      </th>
-                    </tr>
-                  </thead>
-                ) : (
-                  ""
-                )}
+                <thead className="font-normal text-left text-gray-700  bg-gray-50  ">
+                  <tr>
+                    <th
+                      scope="col"
+                      className="px-6 py-3 font-semibold text-md text-gray-700">
+                      Rank
+                    </th>
+                    <th
+                      scope="col"
+                      className="px-6 py-3 font-semibold text-md text-gray-700">
+                      Name
+                    </th>
+                    <th
+                      scope="col"
+                      className="px-6 py-3 font-semibold text-md text-gray-700">
+                      Date Balloted
+                    </th>
+                  </tr>
+                </thead>
                 <tbody>
                   {ballotResult.length > 0 ? (
                     // Sort the ballotResult array by rank before mapping over it to order by rank

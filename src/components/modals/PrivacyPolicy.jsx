@@ -9,7 +9,7 @@ function PrivacyPolicy({ togglePrivacyPolicyModal }) {
       <div className="justify-center items-center flex overflow-x-hidden bg-white overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
         <div className="relative w-full mx-auto p-3">
           <div class="flex items-center justify-between p-4 md:p-2 border-b rounded-t ">
-            <h3 class="text-3xl font-semibold text-gray-900 mt-16 pt-16">
+            <h3 class="text-3xl font-semibold text-gray-900 mt-16 pt-32">
               Privacy Policy
             </h3>
             <button
