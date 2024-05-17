@@ -18,10 +18,10 @@ const Footer = () => {
 
   return (
     <div>
-      <footer className="fixed bottom-0 left-0 w-full p-1 z-20  bg-gray-50 border-gray-200 md:flex md:items-center md:justify-between md:p-4 dark:bg-gray-800 dark:border-gray-600">
+      <footer className="fixed bottom-0 left-0 w-full p-1 z-20  bg-gray-50 border-gray-200 md:flex md:items-center md:justify-between md:p-4  ">
         <div className="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
           <div className="hidden md:block lg:block">
-            <ul className="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
+            <ul className="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500  sm:mt-0">
               <li>
                 <Link to="/about" className="hover:underline me-4 md:me-6">
                   About
@@ -51,7 +51,7 @@ const Footer = () => {
             </ul>
           </div>
           <div className="mt-8 md:mt-0">
-            <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
+            <span className="text-sm text-gray-500 sm:text-center ">
               © {new Date().getFullYear()}
               <Link to="/" className="hover:underline">
                 {" "}

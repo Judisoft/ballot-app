@@ -7,9 +7,7 @@ const DashboardCard = ({ title, count, loading }) => {
       <div className="mb-2 text-3xl md:text-4xl font-extrabold">
         {loading ? <Loader /> : count}
       </div>
-      <div className="font-normal text-gray-500 dark:text-gray-400">
-        {title}
-      </div>
+      <div className="font-normal text-gray-500 ">{title}</div>
     </div>
   );
 };

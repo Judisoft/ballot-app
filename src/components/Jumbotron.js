@@ -7,10 +7,10 @@ const Jumbotron = ({ title, desc, readmore }) => {
   const location = useLocation();
   return (
     <div>
-      <section className="mt-16 bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')] dark:bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg')]">
+      <section className="mt-16 bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')]">
         <div className="py-16 px-4 mx-auto max-w-screen-xl text-center lg:py-16 relative">
           {location.pathname === "/" ? (
-            <h1 className="mb-8 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-8xl dark:text-white">
+            <h1 className="mb-8 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-8xl ">
               Ballot with{" "}
               <span className="text-blue-700">
                 <ReactTyped
@@ -24,11 +24,11 @@ const Jumbotron = ({ title, desc, readmore }) => {
               </span>
             </h1>
           ) : (
-            <h1 className="mb-2 text-3xl font-bold tracking-tight leading-none text-gray-700 dark:text-white">
+            <h1 className="mb-2 text-3xl font-bold tracking-tight leading-none text-gray-700 ">
               {title}
             </h1>
           )}
-          <p className="mb-8 text-lg font-normal text-gray-600 leading-loose lg:text-xl sm:px-16 lg:px-48 dark:text-gray-200">
+          <p className="mb-8 text-lg font-normal text-gray-600 leading-loose lg:text-xl sm:px-16 lg:px-48 ">
             {desc}
           </p>
           {readmore === true ? (

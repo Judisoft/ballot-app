@@ -5,7 +5,7 @@ const Readmore = ({ message, link }) => {
   return (
     <Link
       to={link}
-      className="text-blue-600 dark:text-blue-500 hover:underline font-medium text-lg inline-flex items-center">
+      className="text-blue-600  hover:underline font-medium text-lg inline-flex items-center">
       {message}{" "}
       <svg
         className="w-3.5 h-3.5 ms-2 rtl:rotate-180"

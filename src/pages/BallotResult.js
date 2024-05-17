@@ -102,13 +102,13 @@ const BallotResult = () => {
   return (
     <div>
       <Jumbotron title={`Ballot result for ${group}`} />
-      <section className="bg-white mb-16 dark:bg-gray-900 dark:bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg')]">
+      <section className="bg-white mb-16  ('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg')]">
         <div className="flex justify-center items-center px-4 mx-auto max-w-screen-xl text-center relative">
-          <div className="w-1/2 p-4 bg-white sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
+          <div className="w-1/2 p-4 bg-white sm:p-6 md:p-8  ">
             <div className="relative overflow-x-auto">
-              <table className="w-full max-w-xl mx-auto  rtl:text-right dark:text-gray-400">
+              <table className="w-full max-w-xl mx-auto  rtl:text-right ">
                 {ballotResult.lenth > 0 ? (
-                  <thead className="font-normal text-left text-gray-700  bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                  <thead className="font-normal text-left text-gray-700  bg-gray-50  ">
                     <tr>
                       <th
                         scope="col"
@@ -137,7 +137,7 @@ const BallotResult = () => {
                       .sort((a, b) => a.rank - b.rank)
                       .map((result) => (
                         <tr
-                          className="bg-white text-left border-b dark:bg-gray-800 dark:border-gray-700"
+                          className="bg-white text-left border-b  "
                           key={result.userName}>
                           <td className="px-6 py-4 text-md text-gray-500">
                             {result.rank}
@@ -167,7 +167,7 @@ const BallotResult = () => {
                 <button
                   className={`${
                     ballotResult.length > 0 ? "" : "hidden"
-                  } flex text-white hover:text-white bg-blue-600 hover:bg-blue-700  font-medium rounded-lg text-md px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700`}
+                  } flex text-white hover:text-white bg-blue-600 hover:bg-blue-700  font-medium rounded-lg text-md px-5 py-2.5 text-center  :bg-blue-700`}
                   onClick={generatePDF}>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

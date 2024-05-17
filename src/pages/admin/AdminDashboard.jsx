@@ -87,7 +87,7 @@ const AdminDashboard = () => {
     <div className="w-4/5 mx-auto p-4  mt-32">
       <div className="p-4">
         <div className="grid grid-cols-3 gap-4 mb-4">
-          <div className="flex items-center justify-center h-32 rounded bg-gray-50 dark:bg-gray-800">
+          <div className="flex items-center justify-center h-32 rounded bg-gray-50 ">
             {users && (
               <DashboardCard
                 title="Users"
@@ -96,7 +96,7 @@ const AdminDashboard = () => {
               />
             )}
           </div>
-          <div className="flex items-center justify-center h-32 rounded bg-gray-50 dark:bg-gray-800">
+          <div className="flex items-center justify-center h-32 rounded bg-gray-50 ">
             {groups && (
               <DashboardCard
                 title="Groups"
@@ -105,7 +105,7 @@ const AdminDashboard = () => {
               />
             )}
           </div>
-          <div className="flex items-center justify-center h-32 rounded bg-gray-50 dark:bg-gray-800">
+          <div className="flex items-center justify-center h-32 rounded bg-gray-50 ">
             {ballots && (
               <DashboardCard
                 title="Ballots"
@@ -115,7 +115,7 @@ const AdminDashboard = () => {
             )}
           </div>
         </div>
-        <div className="flex items-center justify-center h-48 mb-4 rounded bg-gray-50 dark:bg-gray-800">
+        <div className="flex items-center justify-center h-48 mb-4 rounded bg-gray-50 ">
           {/* <Graph /> */}
           Charts here
         </div>

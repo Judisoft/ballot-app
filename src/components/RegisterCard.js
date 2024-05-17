@@ -120,21 +120,21 @@ const RegisterCard = () => {
 
   return (
     <div>
-      <section className="bg-white mb-16 dark:bg-gray-900 dark:bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg')]">
+      <section className="bg-white mb-16  ('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg')]">
         <div className="flex justify-center items-center px-4 mx-auto max-w-screen-xl text-center relative">
-          <div className="w-full max-w-md mb-16 p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
+          <div className="w-full max-w-md mb-16 p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8  ">
             {isSubmitted ? (
               <form
                 className="space-y-6"
                 method="POST"
                 onSubmit={handleRegistrationSubmit}>
-                <h5 className="text-xl font-medium text-gray-900 dark:text-white">
+                <h5 className="text-xl font-medium text-gray-900 ">
                   Enter OTP
                 </h5>
                 <div>
                   <label
                     htmlFor="text"
-                    className="block mb-2 text-left text-sm font-medium text-gray-900 dark:text-white">
+                    className="block mb-2 text-left text-sm font-medium text-gray-900 ">
                     Enter code sent to {email}
                   </label>
                 </div>
@@ -149,21 +149,21 @@ const RegisterCard = () => {
                         pattern="[0-9]"
                         onChange={(e) => handleInputChange(e, index)}
                         ref={(el) => (inputRefs.current[index] = el)}
-                        className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                        className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5    "
                       />
                     </div>
                   ))}
                 </div>
                 <button
                   type="submit"
-                  className="w-full text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                  className="w-full text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center  :bg-blue-700 :ring-blue-800">
                   {loading ? <ActionLoader title="Registering..." /> : "Submit"}
                 </button>
-                <div className="text-sm font-medium text-gray-500 dark:text-gray-300">
+                <div className="text-sm font-medium text-gray-500 ">
                   Did not receive the code?{" "}
                   <Link
                     to="/login"
-                    className="text-blue-700 hover:underline dark:text-blue-500"
+                    className="text-blue-700 hover:underline "
                     onClick={(e) => {
                       e.preventDefault();
                       resendOTP();
@@ -178,20 +178,20 @@ const RegisterCard = () => {
               </form>
             ) : (
               <form className="space-y-6" method="POST" onSubmit={handleSubmit}>
-                <h5 className="text-xl font-medium text-gray-900 dark:text-white">
+                <h5 className="text-xl font-medium text-gray-900 ">
                   Fill the form to create an account
                 </h5>
                 <div>
                   <label
                     htmlFor="text"
-                    className="block mb-2 text-left text-sm font-medium text-gray-900 dark:text-white">
+                    className="block mb-2 text-left text-sm font-medium text-gray-900 ">
                     Full name
                   </label>
                   <input
                     type="text"
                     name="name"
                     value={name}
-                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5    "
                     placeholder="John Doe"
                     required="required"
                     autoFocus
@@ -203,13 +203,13 @@ const RegisterCard = () => {
                 <div>
                   <label
                     htmlFor="text"
-                    className="block mb-2 text-left text-sm font-medium text-gray-900 dark:text-white">
+                    className="block mb-2 text-left text-sm font-medium text-gray-900 ">
                     Email
                   </label>
                   <input
                     type="email"
                     name="email"
-                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5    "
                     placeholder="johndoe@domain.com"
                     required="required"
                     value={email}
@@ -221,14 +221,14 @@ const RegisterCard = () => {
                 <div>
                   <label
                     htmlFor="tel"
-                    className="block mb-2 text-left text-sm font-medium text-gray-900 dark:text-white">
+                    className="block mb-2 text-left text-sm font-medium text-gray-900 ">
                     Phone number
                   </label>
                   <input
                     type="tel"
                     name="telephone"
                     id="telephone"
-                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5    "
                     placeholder="237672076995"
                     required="required"
                     value={telephone}
@@ -240,7 +240,7 @@ const RegisterCard = () => {
                 <div>
                   <label
                     htmlFor="password"
-                    className="block mb-2 text-left text-sm font-medium text-gray-900 dark:text-white">
+                    className="block mb-2 text-left text-sm font-medium text-gray-900 ">
                     Password
                   </label>
                   <input
@@ -248,7 +248,7 @@ const RegisterCard = () => {
                     name="password"
                     id="password"
                     placeholder="••••••••"
-                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5    "
                     required="required"
                     value={password}
                     onChange={(e) => {
@@ -263,13 +263,13 @@ const RegisterCard = () => {
                         id="policy"
                         type="checkbox"
                         defaultValue=""
-                        className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800"
+                        className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300   :ring-blue-600  :ring-offset-gray-800"
                         required="required"
                       />
                     </div>
                     <label
                       htmlFor="policy"
-                      className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                      className="ms-2 text-sm font-medium text-gray-900 "
                       required="required">
                       I accept the Terms of Use & Privacy Policy
                     </label>
@@ -277,14 +277,12 @@ const RegisterCard = () => {
                 </div>
                 <button
                   type="submit"
-                  className="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                  className="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center  :bg-blue-700 :ring-blue-800">
                   Register
                 </button>
-                <div className="text-sm font-medium text-gray-500 dark:text-gray-300">
+                <div className="text-sm font-medium text-gray-500 ">
                   Already registered?{" "}
-                  <Link
-                    to="/login"
-                    className="text-blue-700 hover:underline dark:text-blue-500">
+                  <Link to="/login" className="text-blue-700 hover:underline ">
                     Login
                   </Link>
                 </div>

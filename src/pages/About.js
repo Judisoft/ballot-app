@@ -6,16 +6,16 @@ const About = () => {
   return (
     <div>
       <Jumbotron title={"Designed for 'Njangi' Groups"} />
-      <section className="bg-white dark:bg-gray-900 p-3">
+      <section className="bg-white  p-3">
         <div className="pb-16 lg:px-16 mx-auto max-w-screen-xl">
           <div className="max-w-screen-xl text-justify mb-8 lg:mb-16">
-            <p className="text-gray-900 sm:text-xl dark:text-gray-500">
+            <p className="text-gray-900 sm:text-xl ">
               At Njangi Ballot, we revolutionize the way Njangi groups carry out
               their balloting processes. Our web application provides a
               reliable, transparent, and easy-to-use platform for Njangi groups
               to conduct their balloting with utmost convenience.
             </p>
-            <p className="text-gray-900 sm:text-xl dark:text-gray-500">
+            <p className="text-gray-900 sm:text-xl ">
               We understand the importance of fairness and transparency in
               Njangi groups, where each member deserves an equal chance to
               benefit. With Njangi Ballot, we bring you a robust and secure
@@ -25,9 +25,9 @@ const About = () => {
           </div>
           <div className="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0">
             <div className="border border-blue-100 bg-gray-50 p-3 rounded-lg">
-              <div className="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-blue-100 lg:h-12 lg:w-12 dark:bg-primary-900">
+              <div className="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-blue-100 lg:h-12 lg:w-12 ">
                 <svg
-                  className="w-6 h-6 text-primary-600 lg:w-8 lg:h-8 dark:text-primary-300"
+                  className="w-6 h-6 text-primary-600 lg:w-8 lg:h-8 "
                   fill="#2563EB"
                   viewBox="0 0 20 20"
                   xmlns="http://www.w3.org/2000/svg">
@@ -37,38 +37,34 @@ const About = () => {
                     clip-rule="evenodd"></path>
                 </svg>
               </div>
-              <h3 className="mb-2 text-xl font-bold dark:text-white">
-                Reliability
-              </h3>
-              <p className="text-gray-500  dark:text-gray-400">
+              <h3 className="mb-2 text-xl font-bold ">Reliability</h3>
+              <p className="text-gray-500  ">
                 We prioritize the reliability of our platform to ensure a
                 seamless and trustworthy balloting experience for your Njangi
                 group.
               </p>
             </div>
             <div className="border border-blue-100 bg-gray-50 p-3 rounded-lg">
-              <div className="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-blue-100 lg:h-12 lg:w-12 dark:bg-primary-900">
+              <div className="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-blue-100 lg:h-12 lg:w-12 ">
                 <svg
-                  className="w-6 h-6 text-primary-600 lg:w-8 lg:h-8 dark:text-primary-300"
+                  className="w-6 h-6 text-primary-600 lg:w-8 lg:h-8 "
                   fill="#2563EB"
                   viewBox="0 0 20 20"
                   xmlns="http://www.w3.org/2000/svg">
                   <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"></path>
                 </svg>
               </div>
-              <h3 className="mb-2 text-xl font-bold dark:text-white">
-                Transparency
-              </h3>
-              <p className="text-gray-500 dark:text-gray-400">
+              <h3 className="mb-2 text-xl font-bold ">Transparency</h3>
+              <p className="text-gray-500 ">
                 Transparency is at the core of Njangi Ballot. We provide a fully
                 transparent ballot process, giving each member visibility into
                 the entire balloting procedure.
               </p>
             </div>
             <div className="border border-blue-100 bg-gray-50 p-3 rounded-lg">
-              <div className="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-blue-100 lg:h-12 lg:w-12 dark:bg-primary-900">
+              <div className="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-blue-100 lg:h-12 lg:w-12 ">
                 <svg
-                  className="w-6 h-6 text-primary-600 lg:w-8 lg:h-8 dark:text-primary-300"
+                  className="w-6 h-6 text-primary-600 lg:w-8 lg:h-8 "
                   fill="#2563EB"
                   viewBox="0 0 20 20"
                   xmlns="http://www.w3.org/2000/svg">
@@ -79,10 +75,8 @@ const About = () => {
                   <path d="M2 13.692V16a2 2 0 002 2h12a2 2 0 002-2v-2.308A24.974 24.974 0 0110 15c-2.796 0-5.487-.46-8-1.308z"></path>
                 </svg>
               </div>
-              <h3 className="mb-2 text-xl font-bold dark:text-white">
-                Ease of Use
-              </h3>
-              <p className="text-gray-500 dark:text-gray-400">
+              <h3 className="mb-2 text-xl font-bold ">Ease of Use</h3>
+              <p className="text-gray-500 ">
                 We believe that technology should simplify processes, not
                 complicate them. Njangi Ballot is designed with a user-friendly
                 interface, making it effortless for Njangi group members to
@@ -90,19 +84,17 @@ const About = () => {
               </p>
             </div>
             <div className="border border-blue-100 bg-gray-50 p-3 rounded-lg">
-              <div className="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-blue-100 lg:h-12 lg:w-12 dark:bg-primary-900">
+              <div className="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-blue-100 lg:h-12 lg:w-12 ">
                 <svg
-                  className="w-6 h-6 text-primary-600 lg:w-8 lg:h-8 dark:text-primary-300"
+                  className="w-6 h-6 text-primary-600 lg:w-8 lg:h-8 "
                   fill="#2563EB"
                   viewBox="0 0 20 20"
                   xmlns="http://www.w3.org/2000/svg">
                   <path d="M7 3a1 1 0 000 2h6a1 1 0 100-2H7zM4 7a1 1 0 011-1h10a1 1 0 110 2H5a1 1 0 01-1-1zM2 11a2 2 0 012-2h12a2 2 0 012 2v4a2 2 0 01-2 2H4a2 2 0 01-2-2v-4z"></path>
                 </svg>
               </div>
-              <h3 className="mb-2 text-xl font-bold dark:text-white">
-                Security
-              </h3>
-              <p className="text-gray-500 dark:text-gray-400">
+              <h3 className="mb-2 text-xl font-bold ">Security</h3>
+              <p className="text-gray-500 ">
                 Protecting the integrity of your Njangi group is our top
                 priority. Njangi Ballot employs robust security measures to
                 safeguard your data and maintain the confidentiality of your
@@ -111,9 +103,9 @@ const About = () => {
               </p>
             </div>
             <div className="border border-blue-100 bg-gray-50 p-3 rounded-lg">
-              <div className="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-blue-100 lg:h-12 lg:w-12 dark:bg-primary-900">
+              <div className="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-blue-100 lg:h-12 lg:w-12 ">
                 <svg
-                  className="w-6 h-6 text-primary-600 lg:w-8 lg:h-8 dark:text-primary-300"
+                  className="w-6 h-6 text-primary-600 lg:w-8 lg:h-8 "
                   fill="#2563EB"
                   viewBox="0 0 20 20"
                   xmlns="http://www.w3.org/2000/svg">
@@ -123,10 +115,8 @@ const About = () => {
                     clip-rule="evenodd"></path>
                 </svg>
               </div>
-              <h3 className="mb-2 text-xl font-bold dark:text-white">
-                Efficiency
-              </h3>
-              <p className="text-gray-500 dark:text-gray-400">
+              <h3 className="mb-2 text-xl font-bold ">Efficiency</h3>
+              <p className="text-gray-500 ">
                 Say goodbye to manual ballot! Njangi Ballot automates the ballot
                 process, saving your group valuable time and effort. Our
                 efficient system generates results quickly, allowing you to
@@ -134,9 +124,9 @@ const About = () => {
               </p>
             </div>
             <div className="border border-blue-100 bg-gray-50 p-3 rounded-lg">
-              <div className="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-blue-100 lg:h-12 lg:w-12 dark:bg-primary-900">
+              <div className="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-blue-100 lg:h-12 lg:w-12 ">
                 <svg
-                  className="w-6 h-6 text-primary-600 lg:w-8 lg:h-8 dark:text-primary-300"
+                  className="w-6 h-6 text-primary-600 lg:w-8 lg:h-8 "
                   fill="#2563EB"
                   viewBox="0 0 20 20"
                   xmlns="http://www.w3.org/2000/svg">
@@ -147,10 +137,8 @@ const About = () => {
                     clip-rule="evenodd"></path>
                 </svg>
               </div>
-              <h3 className="mb-2 text-xl font-bold dark:text-white">
-                Accessibility
-              </h3>
-              <p className="text-gray-500 dark:text-gray-400">
+              <h3 className="mb-2 text-xl font-bold ">Accessibility</h3>
+              <p className="text-gray-500 ">
                 Njangi Ballot is a web-based application, which means you can
                 access it from anywhere, at any time, using any device with an
                 internet connection. Whether you're at home, in the office, or
@@ -161,20 +149,20 @@ const About = () => {
           </div>
         </div>
       </section>
-      <section className="bg-white dark:bg-gray-900 mb-32">
+      <section className="bg-white  mb-32">
         <div className="py-4 px-4 mx-auto max-w-screen-xl sm:mb-32 lg:px-6">
           <div className="mx-auto max-w-screen-sm text-center">
-            <h2 className="mb-8 text-4xl tracking-tight font-extrabold leading-tight text-gray-900 dark:text-white">
+            <h2 className="mb-8 text-4xl tracking-tight font-extrabold leading-tight text-gray-900 ">
               Start using Njangi Ballot today
             </h2>
-            <p className="mb-6 text-gray-500 dark:text-gray-400 md:text-lg">
+            <p className="mb-6 text-gray-500  md:text-lg">
               Join Njangi Ballot today and experience the convenience of a
               reliable, transparent, and user-friendly ballot system tailored
               specifically for Njangi groups.
             </p>
             <Link
               to="/register"
-              className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-bold rounded-lg text-lg px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+              className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-bold rounded-lg text-lg px-5 py-2.5 mr-2 mb-2  :bg-blue-700 focus:outline-none :ring-blue-800">
               Start for FREE!
             </Link>
           </div>

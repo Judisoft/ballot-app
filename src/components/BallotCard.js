@@ -84,7 +84,7 @@ const BallotCard = ({ members, selectedGroup }) => {
     <div>
       <div className="p-4">
         <button
-          className="flex p-8 bg-blue-600 hover:bg-blue-700  text- text-center items-center justify-center h-24 w-24 rounded-lg custom-shadow  hover:border-blue-700 dark:bg-blue-600 dark:border-blue-600 dark:hover:bg-blue-700"
+          className="flex p-8 bg-blue-600 hover:bg-blue-700  text- text-center items-center justify-center h-24 w-24 rounded-lg custom-shadow  hover:border-blue-700   :bg-blue-700"
           onClick={handleClick}
           onMouseOver={handleMouseOver}
           onMouseOut={handleMouseOut}>

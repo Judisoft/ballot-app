@@ -24,17 +24,17 @@ const Graph = () => {
   }, []);
 
   return (
-    <div className="max-w-sm w-full bg-white rounded-lg shadow dark:bg-gray-800 p-4 md:p-6">
+    <div className="max-w-sm w-full bg-white rounded-lg shadow  p-4 md:p-6">
       <div className="flex justify-between mb-5">
         <div>
-          <h5 className="leading-none text-3xl font-bold text-gray-900 dark:text-white pb-2">
+          <h5 className="leading-none text-3xl font-bold text-gray-900  pb-2">
             €12,423
           </h5>
-          <p className="text-base font-normal text-gray-500 dark:text-gray-400">
+          <p className="text-base font-normal text-gray-500 ">
             Sales this week
           </p>
         </div>
-        <div className="flex items-center px-2.5 py-0.5 text-base font-semibold text-green-500 dark:text-green-500 text-center">
+        <div className="flex items-center px-2.5 py-0.5 text-base font-semibold text-green-500  text-center">
           23%
           <svg
             className="w-3 h-3 ms-1"
@@ -53,7 +53,7 @@ const Graph = () => {
         </div>
       </div>
       <div id="chart"></div> {/* This is where you display the chart */}
-      <div className="grid grid-cols-1 items-center border-gray-200 border-t dark:border-gray-700 justify-between mt-5">
+      <div className="grid grid-cols-1 items-center border-gray-200 border-t  justify-between mt-5">
         <div className="flex justify-between items-center pt-5">
           {/* Your buttons and dropdown menu */}
         </div>

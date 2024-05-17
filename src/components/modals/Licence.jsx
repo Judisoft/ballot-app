@@ -8,14 +8,12 @@ function Licence({ toggleLicenceModal }) {
     <div>
       <div className="justify-center items-center flex overflow-x-hidden bg-white overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
         <div className="relative w-2/5 mx-auto">
-          <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
-            <h3 class="text-3xl font-semibold text-gray-900 dark:text-white">
-              Licence
-            </h3>
+          <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t ">
+            <h3 class="text-3xl font-semibold text-gray-900 ">Licence</h3>
             <button
               type="button"
               onClick={handleCloseModal}
-              class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+              class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center :bg-gray-600 :text-white"
               data-modal-hide="static-modal">
               <svg
                 class="w-3 h-3"
@@ -36,7 +34,7 @@ function Licence({ toggleLicenceModal }) {
           </div>
           {/* <!-- Modal body --> */}
           <div class="p-4 md:p-5 space-y-4">
-            <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+            <p class="text-base leading-relaxed text-gray-500 ">
               This is an MIT Licensed Project.
             </p>
           </div>

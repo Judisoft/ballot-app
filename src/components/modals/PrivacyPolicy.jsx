@@ -8,14 +8,14 @@ function PrivacyPolicy({ togglePrivacyPolicyModal }) {
     <div>
       <div className="justify-center items-center flex overflow-x-hidden bg-white overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
         <div className="relative w-2/5 mx-auto">
-          <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
-            <h3 class="text-3xl font-semibold text-gray-900 dark:text-white">
+          <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t ">
+            <h3 class="text-3xl font-semibold text-gray-900 ">
               Privacy Policy
             </h3>
             <button
               type="button"
               onClick={handleCloseModal}
-              class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+              class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center :bg-gray-600 :text-white"
               data-modal-hide="static-modal">
               <svg
                 class="w-3 h-3"
@@ -37,7 +37,7 @@ function PrivacyPolicy({ togglePrivacyPolicyModal }) {
           {/* <!-- Modal body --> */}
           <div class="p-4 md:p-5 space-y-4">
             <h3 className="font-bold">Last updated: April 27, 2024 </h3>
-            <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+            <p class="text-base leading-relaxed text-gray-500 ">
               This Privacy Policy describes Our policies and procedures on the
               collection, use and disclosure of Your information when You use
               the Service and tells You about Your privacy rights and how the
@@ -45,7 +45,7 @@ function PrivacyPolicy({ togglePrivacyPolicyModal }) {
               the Service. By using the Service, You agree to the collection and
               use of information in accordance with this Privacy Policy.
             </p>
-            <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+            <p class="text-base leading-relaxed text-gray-500 ">
               We will retain Your Personal Data only for as long as is necessary
               for the purposes set out in this Privacy Policy. We will retain
               and use Your Personal Data to the extent necessary to comply with

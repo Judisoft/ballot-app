@@ -34,13 +34,13 @@ const BallotResult = () => {
   return (
     <div>
       <Jumbotron title="Select group to view results" />
-      <section className="bg-white mb-16 dark:bg-gray-900 dark:bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg')]">
+      <section className="bg-white mb-16  ('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg')]">
         <div className="flex justify-center items-center px-4 mx-auto max-w-screen-xl text-center relative">
-          <div className="w-full max-w-md p-4 bg-transparent sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
+          <div className="w-full max-w-md p-4 bg-transparent sm:p-6 md:p-8  ">
             {sortedGroups.map((group) => (
               <div className="py-2">
                 <Link to={`/ballots/${slugify(group)}/result?group=${group}`}>
-                  <button className="block w-full p-5 text-base font-bold text-gray-900 rounded-lg bg-blue-50 hover:text-blue-500 hover:border-blue-500 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700 dark:hover:text-white">
+                  <button className="block w-full p-5 text-base font-bold text-gray-900 rounded-lg bg-blue-50 hover:text-blue-500 hover:border-blue-500   :bg-gray-700 :text-white">
                     <span className="w-full">{group}</span>
                   </button>
                 </Link>
