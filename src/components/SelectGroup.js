@@ -99,6 +99,7 @@ const SelectGroup = () => {
         {members.length > 0 && (
           <BallotCards members={memberData} selectedGroup={selectedGroup} />
         )}
+        <p className="text-center">Select a box from the boxes above to ballot</p>
       </div>
     </div>
   );
