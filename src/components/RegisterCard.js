@@ -59,7 +59,7 @@ const RegisterCard = () => {
       const postOTP = async () => {
         try {
           const res = await axios.post(
-            "http://localhost:5000/api/v1/send-otp",
+            "https://ballot-app-backend.onrender.com/api/v1/send-otp",
             { email }
           );
           NotifySuccess(`${res.data.message}`);
@@ -79,9 +79,12 @@ const RegisterCard = () => {
   const resendOTP = async () => {
     try {
       setLoadingOTP(true);
-      const res = await axios.post("http://localhost:5000/api/v1/send-otp", {
-        email,
-      });
+      const res = await axios.post(
+        "https://ballot-app-backend.onrender.com/api/v1/send-otp",
+        {
+          email,
+        }
+      );
       NotifySuccess(`${res.data.message}`);
     } catch (error) {
       setIsSubmitted(false);
@@ -100,7 +103,7 @@ const RegisterCard = () => {
       try {
         setLoading(true);
         const res = await axios.post(
-          "http://localhost:5000/api/v1/signup",
+          "https://ballot-app-backend.onrender.com/api/v1/signup",
           data
         );
         NotifySuccess(`${res.data.message}`);

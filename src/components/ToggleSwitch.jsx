@@ -22,7 +22,7 @@ const ToggleSwitch = ({ group, ballotStatus, toggleBallotStatus }) => {
 
       // Make API request to update group's ballot status
       const res = await axios.put(
-        `http://localhost:5000/api/v1/groups/${group}`,
+        `https://ballot-app-backend.onrender.com/api/v1/groups/${group}`,
         { isBallotOpen: newBallotStatus },
         {
           headers: {

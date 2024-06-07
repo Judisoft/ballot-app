@@ -15,7 +15,9 @@ const AddMemberCard = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/v1/members");
+        const res = await axios.get(
+          "https://ballot-app-backend.onrender.com/api/v1/members"
+        );
         setGroups(res.data.members);
       } catch (error) {
         NotifyError(`Error while fetching groups: ${error.message}`);
@@ -51,7 +53,7 @@ const AddMemberCard = () => {
       setLoading(true);
       const token = getCookie("token");
       const res = await axios.post(
-        "http://localhost:5000/api/v1/members",
+        "https://ballot-app-backend.onrender.com/api/v1/members",
         userInfo,
         {
           headers: {

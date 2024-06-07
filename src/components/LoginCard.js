@@ -30,7 +30,7 @@ const LoginCard = () => {
     try {
       setLoading(true);
       const res = await axios.post(
-        "http://localhost:5000/api/v1/login",
+        "https://ballot-app-backend.onrender.com/api/v1/login",
         payload
       );
       const token = res.data.token;
