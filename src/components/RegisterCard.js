@@ -185,7 +185,7 @@ const RegisterCard = () => {
                   <label
                     htmlFor="text"
                     className="block mb-2 text-left text-sm font-medium text-gray-900 ">
-                    Full name
+                    Name
                   </label>
                   <input
                     type="text"
@@ -228,7 +228,7 @@ const RegisterCard = () => {
                     name="telephone"
                     id="telephone"
                     className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5    "
-                    placeholder="237672076995"
+                    placeholder="237123456789"
                     required="required"
                     value={telephone}
                     onChange={(e) => {
