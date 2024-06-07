@@ -55,7 +55,7 @@ const ToggleSwitch = ({ group, ballotStatus, toggleBallotStatus }) => {
       />
       <label htmlFor="toggle" className="toggle"></label>
       {/* Show loading indicator if ballot status is loading */}
-      {ballotLoading && <ActionLoader />}
+      {/* {ballotLoading && <ActionLoader />} */}
     </div>
   );
 };
