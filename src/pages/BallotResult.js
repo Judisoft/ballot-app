@@ -17,8 +17,6 @@ const BallotResult = () => {
   const group = searchParams.get("group");
   const [ballotResult, setBallotResult] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [ballotStatus, setBallotStatus] = useState(null);
-  const [ballotStatusLoading, setBallotStatusLoading] = useState(true);
 
   const getBallotResult = async () => {
     try {
@@ -40,32 +38,8 @@ const BallotResult = () => {
     }
   };
 
-  const toggleBallotStatus = () => {
-    setBallotStatus(!ballotStatus);
-  };
-
-  const getGroupBallotStatus = async () => {
-    try {
-      const token = getCookie("token");
-      const res = await axios.get(
-        `https://ballot-app-backend.onrender.com/api/v1/groups/${group}`,
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
-      setBallotStatus(res.data.group.isBallotOpen);
-    } catch (error) {
-      console.log(error);
-    } finally {
-      setBallotStatusLoading(false);
-    }
-  };
-
   useEffect(() => {
     getBallotResult();
-    getGroupBallotStatus();
   }, [group]);
 
   const generatePDF = () => {
@@ -134,35 +108,7 @@ const BallotResult = () => {
         <div className="flex justify-center items-center px-4 mx-auto max-w-screen-xl text-center relative">
           <div className="w-full mx-auto p-4 bg-white sm:p-6 md:p-8  ">
             <div className="relative overflow-x-auto">
-              <div className="flex justify-center mb-8">
-                <div className="px-4">
-                  <h4 className="text-xl">
-                    Ballot is{" "}
-                    {ballotStatus ? (
-                      <>
-                        <strong>Open</strong> <br />
-                        <span className="text-sm text-gray-500">
-                          Members can ballot
-                        </span>
-                      </>
-                    ) : (
-                      <>
-                        <strong>Closed</strong> <br />
-                        <span className="text-sm text-gray-500">
-                          Members cannot ballot
-                        </span>
-                      </>
-                    )}
-                  </h4>
-                </div>
-                <div className="px-4">
-                  <ToggleSwitch
-                    group={group}
-                    ballotStatus={ballotStatus}
-                    toggleBallotStatus={toggleBallotStatus}
-                  />
-                </div>
-              </div>
+              <ToggleSwitch group={group} />
               <table className="w-full max-w-xl mx-auto  rtl:text-right">
                 <thead className="font-normal text-left text-gray-700  bg-gray-50 ">
                   <tr>
