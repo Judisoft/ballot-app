@@ -30,7 +30,7 @@ const LoginCard = () => {
     try {
       setLoading(true);
       const res = await axios.post(
-        "https://ballot-app-backend.onrender.com/api/v1/login",
+        "http://localhost:5000/api/v1/login",
         payload
       );
       const token = res.data.token;
@@ -116,7 +116,7 @@ const LoginCard = () => {
                   name="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  placeholder="••••••••"
+                  placeholder="password"
                   className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5    "
                   required=""
                 />

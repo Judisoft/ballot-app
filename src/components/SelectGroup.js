@@ -14,9 +14,7 @@ const SelectGroup = () => {
 
   const getAllMembers = async () => {
     try {
-      const res = await axios.get(
-        "https://ballot-app-backend.onrender.com/api/v1/members"
-      );
+      const res = await axios.get("http://localhost:5000/api/v1/members");
       setMembers(res.data.members);
     } catch (error) {
       if (error.response.status === 401) {
@@ -29,9 +27,7 @@ const SelectGroup = () => {
 
   const getUserGroups = async () => {
     try {
-      const res = await axios.get(
-        "https://ballot-app-backend.onrender.com/api/v1/members"
-      );
+      const res = await axios.get("http://localhost:5000/api/v1/members");
       setUserGroups(res.data.members);
     } catch (error) {
       console.log(error);
@@ -96,10 +92,14 @@ const SelectGroup = () => {
             </Link>
           </div>
         )}
-        {members.length > 0 && (
-          <BallotCards members={memberData} selectedGroup={selectedGroup} />
+        {members.length > 1 && (
+          <div>
+            <p className="text-center py-2">
+              Select a box from the boxes above to ballot
+            </p>
+            <BallotCards members={memberData} selectedGroup={selectedGroup} />
+          </div>
         )}
-        <p className="text-center">Select a box from the boxes above to ballot</p>
       </div>
     </div>
   );

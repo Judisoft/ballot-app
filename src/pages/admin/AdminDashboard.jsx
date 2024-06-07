@@ -17,14 +17,11 @@ const AdminDashboard = () => {
     const getAllUsers = async () => {
       try {
         const token = getCookie("token");
-        const response = await axios.get(
-          "https://ballot-app-backend.onrender.com/api/v1/users",
-          {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-          }
-        );
+        const response = await axios.get("http://localhost:5000/api/v1/users", {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
         console.log(response.data.users);
         setUsers(response.data.users);
       } catch (error) {
@@ -43,7 +40,7 @@ const AdminDashboard = () => {
       try {
         const token = getCookie("token");
         const response = await axios.get(
-          "https://ballot-app-backend.onrender.com/api/v1/groups",
+          "http://localhost:5000/api/v1/groups",
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -66,7 +63,7 @@ const AdminDashboard = () => {
       try {
         const token = getCookie("token");
         const response = await axios.get(
-          "https://ballot-app-backend.onrender.com/api/v1/ballots/all",
+          "http://localhost:5000/api/v1/ballots/all",
           {
             headers: {
               Authorization: `Bearer ${token}`,

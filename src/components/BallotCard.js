@@ -17,7 +17,7 @@ const BallotCard = ({ members, selectedGroup }) => {
         const group = selectedGroup;
         const token = getCookie("token");
         const res = await axios.post(
-          "https://ballot-app-backend.onrender.com/api/v1/ballots/ranks",
+          "http://localhost:5000/api/v1/ballots/ranks",
           { group },
           {
             headers: {
@@ -55,7 +55,7 @@ const BallotCard = ({ members, selectedGroup }) => {
         setLoading(true);
         const token = getCookie("token");
         const res = await axios.post(
-          "https://ballot-app-backend.onrender.com/api/v1/ballots",
+          "http://localhost:5000/api/v1/ballots",
           {
             userName: authUser.name,
             group: group,

@@ -25,7 +25,7 @@ const CreateGroupCard = () => {
       setLoading(true);
       const token = getCookie("token");
       const res = await axios.post(
-        "https://ballot-app-backend.onrender.com/api/v1/groups",
+        "http://localhost:5000/api/v1/groups",
         data,
         {
           headers: {
@@ -55,7 +55,7 @@ const CreateGroupCard = () => {
         setAddMemberLoading(true);
         const token = getCookie("token");
         const res = await axios.post(
-          "https://ballot-app-backend.onrender.com/api/v1/members",
+          "http://localhost:5000/api/v1/members",
           userInfo,
           {
             headers: {
@@ -115,7 +115,7 @@ const CreateGroupCard = () => {
             ) : (
               <form className="space-y-6" method="POST" onSubmit={handleSubmit}>
                 <h5 className="text-xl font-medium text-gray-900 ">
-                  Give a name to your Group
+                  What is the name of your group?
                 </h5>
                 <div>
                   <input

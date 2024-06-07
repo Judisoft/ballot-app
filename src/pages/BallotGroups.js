@@ -13,7 +13,7 @@ const BallotResult = () => {
     const getAllMembers = async () => {
       try {
         const response = await axios.get(
-          "https://ballot-app-backend.onrender.com/api/v1/members"
+          "http://localhost:5000/api/v1/members"
         );
         const res = response.data.members;
         setMembers(res);
@@ -33,7 +33,7 @@ const BallotResult = () => {
 
   return (
     <div>
-      <Jumbotron title="Select group to view results" />
+      <Jumbotron title="Groups" />
       <section className="bg-white mb-16  ('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg')]">
         <div className="flex justify-center items-center px-4 mx-auto max-w-screen-xl text-center relative">
           <div className="w-full max-w-md p-4 bg-transparent sm:p-6 md:p-8  ">

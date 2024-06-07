@@ -22,7 +22,7 @@ const ResetPasswordCard = () => {
         try {
           setLoading(true);
           const res = await axios.post(
-            "https://ballot-app-backend.onrender.com/api/v1/forgot-password",
+            "http://localhost:5000/api/v1/forgot-password",
             data
           );
           localStorage.setItem("token", res.data.token);

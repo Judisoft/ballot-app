@@ -134,7 +134,7 @@ const Navbar = () => {
                   to="/groups"
                   className="block py-2 px-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md::text-blue-500  :bg-gray-700 :text-white md::bg-transparent "
                   onClick={handleMenuItemClick}>
-                  Groups
+                  New Group
                 </Link>
               </li>
               <li>

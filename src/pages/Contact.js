@@ -24,7 +24,7 @@ const Contact = () => {
       try {
         setSendLoading(true);
         const res = await axios.post(
-          "https://ballot-app-backend.onrender.com/api/v1/contact",
+          "http://localhost:5000/api/v1/contact",
           data
         );
         if (res.data) {

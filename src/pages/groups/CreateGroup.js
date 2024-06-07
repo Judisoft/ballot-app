@@ -6,7 +6,7 @@ const CreateGroup = () => {
   return (
     <div>
       <Jumbotron 
-            title={'Create \'Njangi\' Group'}
+            title={'Create Group'}
         />
         <CreateGroupCard />
     </div>
