@@ -3,6 +3,7 @@ import axios from "axios";
 import getCookie from "../utils/getCookie";
 import NotifySuccess from "../utils/notifications/NotifySuccess";
 import ActionLoader from "./ActionLoader";
+import NotifyError from "../utils/notifications/NotifyError";
 
 const ToggleSwitch = ({ group, ballotStatus, toggleBallotStatus }) => {
   const [ballotLoading, setBallotLoading] = useState(false); // Changed initial state to false
@@ -11,30 +12,27 @@ const ToggleSwitch = ({ group, ballotStatus, toggleBallotStatus }) => {
     try {
       const token = getCookie("token");
 
-      // Toggle the ballot status
-      const newBallotStatus = !ballotStatus;
-
-      // Update local state immediately
-      toggleBallotStatus(newBallotStatus);
-
       // Set loading state to true
       setBallotLoading(true);
 
       // Make API request to update group's ballot status
       const res = await axios.put(
         `http://localhost:5000/api/v1/groups/${group}`,
-        { isBallotOpen: newBallotStatus },
+        { isBallotOpen: !ballotStatus }, // Send the toggled status directly
         {
           headers: {
             Authorization: `Bearer ${token}`,
           },
         }
       );
-      console.log(res.data);
+
+      // Update local state only after a successful response
+      toggleBallotStatus(!ballotStatus);
+
       // Notify success upon successful response
       NotifySuccess(res.data.message);
     } catch (error) {
-      console.error("Error updating group ballot status:", error);
+      NotifyError(error.response.data.message);
     } finally {
       // Reset loading state after API call completes
       setBallotLoading(false);
