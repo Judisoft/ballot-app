@@ -139,6 +139,14 @@ const Navbar = () => {
               </li>
               <li>
                 <Link
+                  to="/user-guide"
+                  className="block py-2 px-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md::text-blue-500  :bg-gray-700 :text-white md::bg-transparent "
+                  onClick={handleMenuItemClick}>
+                  User Guide
+                </Link>
+              </li>
+              <li>
+                <Link
                   to="/contact"
                   className="block py-2 px-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md::text-blue-500  :bg-gray-700 :text-white md::bg-transparent "
                   onClick={handleMenuItemClick}>
@@ -180,6 +188,14 @@ const Navbar = () => {
                     className="block py-2 px-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md::text-blue-500  :bg-gray-700 :text-white md::bg-transparent "
                     onClick={handleMenuItemClick}>
                     Group Manager
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/user-guide"
+                    className="block py-2 px-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md::text-blue-500  :bg-gray-700 :text-white md::bg-transparent "
+                    onClick={handleMenuItemClick}>
+                    User Guide
                   </Link>
                 </li>
                 <li>
