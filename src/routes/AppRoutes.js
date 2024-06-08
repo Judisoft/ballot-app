@@ -11,6 +11,7 @@ import ProtectedRoute from "./ProtectedRoute";
 import AuthRouteGuard from "./AuthRouteGuard";
 import BallotResult from "../pages/BallotResult";
 import Contact from "../pages/Contact";
+import UserGuide from "../pages/UserGuide";
 import About from "../pages/About";
 import ResetPassword from "../pages/auth/ResetPassword";
 import ChangePassword from "../pages/auth/ChangePassword";
@@ -21,6 +22,7 @@ const AppRoutes = () => {
     <Routes>
       <Route path="/" element={<Homepage />} />
       <Route path="/contact" element={<Contact />} />
+      <Route path="/user-guide" element={<UserGuide />} />
       <Route path="/about" element={<About />} />
       <Route
         path="/login"

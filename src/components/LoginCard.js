@@ -146,11 +146,7 @@ const LoginCard = () => {
               <button
                 type="submit"
                 className="w-full text-white bg-blue-700 hover:bg-blue-800  focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center  :bg-blue-700 ">
-                {loading ? (
-                  <ActionLoader title="Logging in..." />
-                ) : (
-                  "Grant me access"
-                )}
+                {loading ? <ActionLoader title="Logging in..." /> : "Login"}
               </button>
               <div className="text-sm font-medium text-gray-500 ">
                 Not registered?{" "}
