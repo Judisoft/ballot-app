@@ -33,5 +33,5 @@ const generateRank = (unavailableRanks, numOfMembers) => {
 export default generateRank;
 
 
-export default generateRank;
+// export default generateRank;
 
