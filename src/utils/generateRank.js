@@ -4,7 +4,7 @@ const generateRank = (unavailableRanks, numOfMembers) => {
       let rank;
       do {
         // rank = Math.floor(Math.random() * numOfMembers + 1);
-          rank = Math.floor(Math.random() * 12 + 1);
+          rank = Math.floor(Math.random() * 11 + 1);
       } while (unavailableRanks.includes(rank));
       return rank;
     } else {
