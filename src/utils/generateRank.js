@@ -17,7 +17,7 @@ const generateRank = (unavailableRanks, numOfMembers) => {
     const allRanks = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
     
     // Filter out unavailable ranks
-    const availableRanks = allRanks.filter(rank => !unavailableRanks.includes(rank));
+    const availableRanks = allRanks.filter(rank => unavailableRanks.includes(rank));
     
     // Check if there are available ranks left
     if (availableRanks.length === 0) {
