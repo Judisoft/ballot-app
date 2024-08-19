@@ -5,7 +5,7 @@ const generateRank = (unavailableRanks, numOfMembers) => {
       do {
         // rank = Math.floor(Math.random() * numOfMembers + 1);
           rank = Math.floor(Math.random() * 11 + 1);
-      } while (!unavailableRanks.includes(rank));
+      } while (unavailableRanks.includes(rank));
       return rank;
     } else {
       window.location.reload();
