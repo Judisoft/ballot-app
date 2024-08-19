@@ -1,5 +1,5 @@
 
-// const generateRank = (unavailableRanks, numOfMembers) => {
+const generateRank = (unavailableRanks, numOfMembers) => {
 //     if (window.confirm('Are you sure you want to ballot with this choice?')) {
 //       let rank;
 //       do {
