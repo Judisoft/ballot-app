@@ -44,7 +44,7 @@ const BallotCard = ({ members, selectedGroup }) => {
   };
 
 const handleClick = async (e) => {
-  const numOfMembers = members.length;
+  const numOfMembers = 11; // members.length;
   const rank = generateRank(unavailableRanks, numOfMembers);
   const authUser = JSON.parse(getCookie("authUser"));
   const group = selectedGroup;
