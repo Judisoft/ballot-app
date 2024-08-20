@@ -83,7 +83,8 @@ const handleClick = async (e) => {
       );
       NotifySuccess(saveRes.data.message);
     } else {
-      NotifyError("The rank is no longer available. Please try again.");
+      // NotifyError("The rank is no longer available. Please try again.");
+      handleClick();
     }
   } catch (error) {
     console.log(error);
