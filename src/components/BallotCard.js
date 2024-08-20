@@ -43,42 +43,56 @@ const BallotCard = ({ members, selectedGroup }) => {
     setMessage("");
   };
 
-  const handleClick = (e) => {
-    const numOfMembers = members.length;
-    const rank = generateRank(unavailableRanks, numOfMembers);
-    const authUser = JSON.parse(getCookie("authUser"));
+const handleClick = async (e) => {
+  const numOfMembers = members.length;
+  const rank = generateRank(unavailableRanks, numOfMembers);
+  const authUser = JSON.parse(getCookie("authUser"));
+  const group = selectedGroup;
 
-    const group = selectedGroup;
+  try {
+    setLoading(true);
+    const token = getCookie("token");
 
-    const saveBallotResult = async () => {
-      try {
-        setLoading(true);
-        const token = getCookie("token");
-        const res = await axios.post(
-          "https://ballot-app-backend.onrender.com/api/v1/ballots",
-          {
-            userName: authUser.name,
-            group: group,
-            hasBalloted: true,
-            rank: rank,
-            memberEmail: authUser.email,
-          },
-          {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-          }
-        );
-        NotifySuccess(res.data.message);
-      } catch (error) {
-        console.log(error);
-        NotifyError(error.response.data.message);
-      } finally {
-        setLoading(false);
+    // Send rank generation request to server
+    const res = await axios.post(
+      "https://ballot-app-backend.onrender.com/api/v1/check-rank",
+      { rank, group },
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
       }
-    };
-    saveBallotResult();
-  };
+    );
+
+    if (res.data.unique) {
+      // Save the ballot result if the rank is unique
+      const saveRes = await axios.post(
+        "https://ballot-app-backend.onrender.com/api/v1/ballots",
+        {
+          userName: authUser.name,
+          group: group,
+          hasBalloted: true,
+          rank: rank,
+          memberEmail: authUser.email,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      NotifySuccess(saveRes.data.message);
+    } else {
+      NotifyError("The rank is no longer available. Please try again.");
+    }
+  } catch (error) {
+    console.log(error);
+    NotifyError(error.response?.data?.message || "An error occurred");
+  } finally {
+    setLoading(false);
+  }
+};
+
 
   return (
     <div>
