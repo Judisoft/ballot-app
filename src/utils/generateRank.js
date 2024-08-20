@@ -11,7 +11,5 @@ const generateRank = (unavailableRanks, numOfMembers) => {
     }
   };
 
-};
-
 export default generateRank;
 
